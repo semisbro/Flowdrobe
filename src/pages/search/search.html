@@ -1,0 +1,31 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+    <ion-toolbar>
+      <ion-grid>
+        <ion-row class="headerButtonHolder">
+          <ion-col col-2 class="headerButtonCol" (click)="back()">
+            <button ion-button clear class="backController">
+              <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+            </button>
+          </ion-col>
+          <ion-col col-7 class="headerButtonCol">
+            <p class="appTitle">Search</p>
+          </ion-col>
+          <ion-col col-2 class="headerButtonCol saveBtnCol" text-right>
+            <button ion-button clear class="saveController">
+              <p class="saveLabel" (click)="backToFiler()">Choose</p>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar (ionInput)="getItems($event)" [(ngModel)]="searchValue"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let brand of brands" (click)="selectedItem(brand.name)" class="brandListItem">
+      <div class="brandLabel" [ngClass]="{'selected': filters.brand.indexOf(brand.name) > -1}" >{{brand.displayName}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>

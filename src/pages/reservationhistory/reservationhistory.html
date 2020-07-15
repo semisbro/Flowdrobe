@@ -1,0 +1,90 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol" (click)="openHomePage()">
+          <button ion-button clear class="backController">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol appTitleCol">
+          <p class="appTitle">My Reservations</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p class="subtitle" text-center>Track the status of the reservations you have placed.</p>
+  <accordion *ngFor="let refItem of refHistory" orderNo="{{refItem.key}}" quantity="{{refItem.value.length}}" date="{{refItem.value[0].refDate | date:'dd-MM-yyyy'}}" sum="{{refItem.totalValue | number: '1.2-2'}}">
+    <ion-grid>
+      <ion-row class="itemRow" *ngFor="let item of refItem.value">
+        <ion-col col-5 class="imgCol">
+            <img src="{{item.displayedImg}}">
+        </ion-col>
+        <ion-col col-7 class="detailsCol">
+          <ion-row>
+            <ion-col col-12>
+              <p class="title">{{item.title}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-1>
+              <ion-icon ios="ios-pin-outline" md="ios-pin-outline" class="cardLocationIcon">
+              </ion-icon>
+            </ion-col>
+            <ion-col col-11 class="cartCardLocationCol">
+              <p class="cardLocation">{{item.street}}, {{item.postalCode}} {{item.city}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 text-left>
+              <p class="status" [ngStyle]="{'color': item.myColor}">Status: {{item.displayedStatus}}</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 text-right>
+              <p class="priceTag">{{item.price | number : '1.2-2'}} kr.</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-row class="totalAmountRow">
+        <ion-col col-7 text-right>
+          <p>Total products</p>
+        </ion-col>
+        <ion-col col-5 text-right>
+          <p>{{refItem.productValue | number: '1.2-2'}} kr.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7 text-right>
+          <p>Shipping</p>
+        </ion-col>
+        <ion-col col-5 text-right>
+          <p>25 kr.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7 text-right>
+          <p>Buyer protection</p>
+        </ion-col>
+        <ion-col col-5 text-right>
+          <p>2.50 kr.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="totalRow">
+        <ion-col col-7 text-right>
+          <p>Total</p>
+        </ion-col>
+        <ion-col col-5 text-right>
+          <p>{{refItem.totalValue | number: '1.2-2'}} kr.</p>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </accordion>
+</ion-content>

@@ -1,0 +1,293 @@
+page-login {
+  /* ion- header */
+
+  ion-header {
+    background-image: url(../assets/imgs/signupcover.png);
+    background-repeat: no-repeat;
+    min-height: 23vh;
+    background-size: cover;
+    border-radius: 0px 0px 40px 0px;
+  }
+
+  .toolbar-background {
+    background: transparent;
+  }
+
+  .header-ios .toolbar-background-ios {
+    border-color: transparent;
+  }
+
+  .backIcon {
+    color: black;
+  }
+
+  .backLabel {
+    color: black;
+    padding: 7px;
+  }
+
+  .backController {
+    padding: 8px;
+  }
+
+  .headerButtonCol {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    margin-top: 10px;
+  }
+
+  .toolbar-ios .headerButtonCol {
+    top: 5px;
+  }
+
+  .headerLogoCol {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 25px;
+  }
+
+  @media only screen and (min-height: 600px) {
+    .headerLogoCol {
+      font-size: 28px;
+    }
+
+    .backController {
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (min-height: 700px) {
+    .headerLogoCol {
+      font-size: 30px;
+      margin-top: 1.2em;
+    }
+
+    .backController {
+      font-size: 16px;
+    }
+  }
+
+  .companyName {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .boldDetail {
+    font-weight: bold;
+  }
+
+  /* ion-content */
+  .guide {
+    color: #999999;
+    padding-left: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 16px;
+  }
+
+  ion-item {
+    padding-right: 10px;
+  }
+
+  .inputContainer {
+    padding: 0 10px 0 0;
+  }
+
+  .emailInputCol {
+    padding: 0 5px 0 0;
+  }
+
+  .errorMsg {
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 12px;
+    color: red;
+  }
+
+  .errorMsgCol {
+    padding-left: 16px;
+  }
+
+  .forgotPassBtnCol {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .forgotPassBtn {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    padding: 0;
+    margin-bottom: 0;
+    text-transform: none;
+  }
+
+  .passInputCol {
+    padding: 0 5px 0 0;
+  }
+
+  .btnContainer {
+    padding-top: 0;
+  }
+
+  .createBtn {
+    margin-top: 25px;
+    width: 100%;
+    text-transform: capitalize;
+  }
+
+  .subguideContainer {
+    margin-bottom: 10px;
+  }
+
+  .subguide {
+    text-align: center;
+    border-bottom: 1px solid #999999;
+    line-height: 0.1em;
+    margin: 20px 0 20px;
+  }
+
+  .subguide span {
+    background: #fff;
+    padding: 0 10px;
+  }
+
+  .scroll-content {
+    padding-bottom: 0 !important;
+  }
+
+  .signupLabel {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+
+  @media only screen and (max-height: 600px) {
+    .scroll-content {
+      margin-top: 135px !important;
+    }
+
+    .guide {
+      margin: 0;
+      font-size: 11px;
+    }
+
+    .subguideContainer {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .errorMsg {
+      font-size: 10px;
+    }
+
+    .forgotPassBtn {
+      font-size: 12px;
+    }
+
+    .emailInput {
+      font-size: 14px;
+    }
+
+    .passInput {
+      font-size: 14px;
+    }
+
+    .errorMsgCol {
+      padding-bottom: 0;
+    }
+
+    .forgotPassBtnCol {
+      padding-bottom: 0;
+    }
+
+    .loginBtnCol {
+      padding-top: 0;
+    }
+
+    .facebookBtn {
+      height: 30px;
+      font-size: 14px;
+    }
+
+    .googleBtn {
+      height: 30px;
+      font-size: 14px;
+    }
+
+    .signupLabelCol {
+      padding-top: 10px;
+    }
+
+    .facebookBtnCol {
+      padding-bottom: 0;
+    }
+
+    .googleBtnCol {
+      padding-bottom: 0;
+    }
+
+    .signupLabel {
+      margin-bottom: 0 !important;
+    }
+
+    .signupBtn {
+      height: 30px;
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 700px) {
+    .scroll-content {
+      margin-top: 140px !important;
+    }
+    .guide {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+    ion-item {
+      font-size: 14px !important;
+    }
+    ion-input {
+      font-size: 14px;
+    }
+    .errorMsgCol {
+      padding-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-height: 700px) and (max-height: 800px) {
+    .signupLabel {
+      margin-bottom: 0;
+    }
+
+    .scroll-content {
+      margin-top: 160px !important;
+    }
+  }
+
+  @media only screen and (min-height: 800px) {
+    .scroll-content {
+      margin-top: 210px;
+    }
+  }
+
+  .signupLabelCol {
+    padding-bottom: 0;
+  }
+
+  .signupBtnCol {
+    width: 100%;
+    text-align: center;
+    padding-top: 0;
+  }
+
+  .signupBtn {
+    color: black;
+    font-weight: 500;
+    margin-top: 0;
+    text-transform: none;
+  }
+}

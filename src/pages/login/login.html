@@ -1,0 +1,87 @@
+<ion-header no-border no-shadow>
+
+  <ion-toolbar no-border (click)="openHomePage()">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button clear class="backController">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+            <label class="backLabel">Back</label>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3></ion-col>
+        <ion-col col-6 class="headerLogoCol">
+          <p class="companyName"><span class="boldDetail">FLOW</span>ROBE</p>
+        </ion-col>
+        <ion-col col-3></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p class="guide">Please login to continue</p>
+  <ion-grid class="inputContainer">
+    <form [formGroup]="loginForm" novalidate>
+      <ion-row>
+        <ion-col col-12 class="emailInputCol">
+          <ion-item class="emailInput">
+            <ion-label floating>Email Address</ion-label>
+            <ion-input formControlName="email" type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!loginForm.controls.email.valid && submitAttempt">
+        <ion-col col-12 class="errorMsgCol">
+          <p class="errorMsg">Please enter a valid email.</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 class="passInputCol">
+          <ion-item class="passInput">
+            <ion-label floating>Password</ion-label>
+            <ion-input formControlName="password" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="!loginForm.controls.password.valid && submitAttempt">
+        <ion-col col-12 class="errorMsgCol">
+          <p class="errorMsg">It must be at least 8 characters long.</p>
+        </ion-col>
+      </ion-row>
+      <!--
+      <ion-row>
+        <ion-col col-12 class="forgotPassBtnCol">
+          <button ion-button clear float-right class="forgotPassBtn">Forgot password?</button>
+        </ion-col>
+      </ion-row>
+      -->
+      <ion-row>
+        <ion-col col-12 class="loginBtnCol">
+          <button ion-button class="createBtn" color="dark" (click)="login()">Login</button>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngIf="authError[0]">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">{{authError[1]}}</p>
+          </ion-col>
+        </ion-row>
+    </form>
+  </ion-grid>
+  <ion-grid class="btnContainer">
+    <ion-row class="signupContainer">
+      <ion-col col-12 class="signupLabelCol">
+        <p class="guide signupLabel">New to <span class="boldDetail">FLOW</span>ROBE?</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 class="signupBtnCol">
+        <button ion-button clear class="signupBtn" (click)="openSignupPage()">Create Account Here</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

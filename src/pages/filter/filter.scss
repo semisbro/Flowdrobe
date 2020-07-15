@@ -1,0 +1,851 @@
+page-filter {
+  /* ion-header */
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-size: 20px;
+    margin-top: 16px;
+    font-family: Barlow-Medium;
+  }
+
+  .backIcon {
+    color: black;
+    width: 100%;
+    text-align: left;
+  }
+
+  .backController {
+    padding: 0;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  ion-header {
+    padding: 0;
+    box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-toolbar {
+    max-height: 60px;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  ion-navbar .back-button-ios {
+    border: none;
+    height: 40px;
+    width: 40px;
+    color: black;
+  }
+
+  .back-button-text {
+    display: none;
+  }
+
+  .back-button-text-ios {
+    display: none;
+  }
+
+  .resetController {
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: capitalize;
+  }
+
+  .resetBtnCol {
+    padding-right: 0;
+  }
+
+  .resetLabel {
+    font-size: 17px;
+    font-family: Barlow-SemiBold;
+    margin-top: 13px;
+  }
+
+  @media only screen and (max-height: 600px) {
+    ion-navbar .back-button-ios {
+      border: none;
+      height: 40px;
+      width: 40px;
+      color: black;
+      padding-top: 5px;
+    }
+  }
+
+  @media only screen and (max-height: 700px) {
+    .toolbar-md {
+      min-height: 46px;
+    }
+
+    ion-toolbar {
+      max-height: 50px;
+    }
+
+    .appTitle {
+      font-size: 18px;
+      margin-top: 18px;
+    }
+
+    .resetLabel {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
+
+  /* ion-content */
+
+  .optionController {
+    color: black;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .optionCol {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    margin-right: 10px;
+    min-width: 20%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .clothesCol {
+    height: 66.2px;
+    position: relative;
+  }
+
+  .typeFilterSelected {
+    position: absolute;
+    height: 31%;
+    width: 36%;
+    top: -1px;
+    right: 0;
+    background-color: #31a06b;
+    z-index: 1;
+    border-bottom-left-radius: 100%;
+    color: white;
+    font-size: 11pt;
+    text-align: right;
+    padding-right: 8%;
+  }
+
+  .genderFilterSelected {
+    position: absolute;
+    height: 31%;
+    width: 40%;
+    top: -1px;
+    right: 0;
+    background-color: #31a06b;
+    z-index: 1;
+    border-bottom-left-radius: 100%;
+    color: white;
+    font-size: 11pt;
+    text-align: right;
+    padding-right: 8%;
+  }
+
+  .conditionFilterSelected {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: -1px;
+    right: -1px;
+    background-color: #31a06b;
+    z-index: 1;
+    border-bottom-left-radius: 100%;
+    color: white;
+    font-size: 11pt;
+    text-align: right;
+    padding-right: 0%;
+  }
+
+  .conditionFilterSelectedIcon {
+    position: relative;
+    top: -5px;
+    font-size: 20px;
+    right: 0;
+  }
+
+  .lastCol {
+    margin-right: 0;
+  }
+
+  .customIcon {
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  .optionLabelCol {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .optionLabel {
+    margin: 0;
+    font-size: 8.5px;
+    font-family: Barlow-Light;
+  }
+
+  .optionRow {
+    padding-bottom: 5px;
+    justify-content: center;
+  }
+
+  .scroll-content {
+    padding-top: 10px !important;
+  }
+
+  fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+  }
+
+  legend {
+    text-transform: uppercase;
+    font-family: Barlow-SemiBold;
+    letter-spacing: 2px;
+  }
+
+  .searchBtn {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  .searchBtn .button-inner {
+    justify-content: left !important;
+  }
+
+  .searchIcon {
+    padding-right: 5px;
+  }
+
+  .searchLabel {
+    font-family: Barlow-Light;
+    margin: 0;
+  }
+
+  .chipContainer {
+    border-radius: 5px;
+    background: none;
+    border: 1px solid black;
+    margin-right: 5px;
+    height: 32px;
+    font-size: 13px;
+    line-height: 32px;
+    background-color: black;
+  }
+
+  .chipIcon {
+    background-color: black;
+    border-radius: 0;
+    width: 20px;
+    line-height: 33px;
+    height: 100%;
+    padding-right: 10px;
+  }
+
+  .chipLabel {
+    color: white;
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  .selectedBrandRow {
+    margin-left: 9px;
+    margin-right: 9px;
+  }
+
+  .typeLabel {
+    display: flex;
+    height: 20.8px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sizeRangeLabel {
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  .priceRangeLabel {
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  .distanceRangeLabel {
+    margin-top: 0;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+
+  .clothesRangeLeftLabelCol {
+    padding-left: 28px;
+    padding-top: 0;
+    letter-spacing: 1.5px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+
+  .clothesRangeRightLabelCol {
+    padding-right: 5px;
+    padding-top: 0;
+    letter-spacing: 1.5px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    padding-bottom: 0;
+  }
+
+  .shoeRangeLeftLabelCol {
+    padding-left: 29px;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .shoeRangeRightLabelCol {
+    padding-right: 13px;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .priceRangeLeftLabelCol {
+    padding-left: 33px;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .priceRangeRightLabelCol {
+    padding-right: 0;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .distanceRangeLeftLabelCol {
+    padding-left: 17px;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .distanceRangeRightLabelCol {
+    padding-left: 95px;
+    padding-right: 0;
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 0;
+  }
+
+  .sizeLabel {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  .sizeLabelCol {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .sizeRange {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .item-ios .item-inner {
+    border-bottom: 0px !important;
+  }
+
+  .item-md .item-inner {
+    border-bottom: 0px !important;
+  }
+
+  .kidSizeHelperLabel {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .sizeRangeCol {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .distanceRangeCol .item-ios {
+    padding-left: 0;
+  }
+
+  .sizeTitle {
+    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0px;
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+    font-family: Barlow-Light;
+  }
+
+  .sizeTitleCol {
+    padding-top: 0;
+  }
+
+  .sizeFields {
+    padding-bottom: 15px;
+  }
+
+  .kidSizeRange {
+    padding-bottom: 5px;
+  }
+
+  .distanceInputContainer {
+    padding-left: 0;
+  }
+
+  .distanceInputContainer .item-inner {
+    box-shadow: none !important;
+  }
+
+  .distanceInput {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-right: 1px solid rgba(0, 0, 0, 0.15);
+    border-left: 1px solid rgba(0, 0, 0, 0.15);
+  }
+
+  .distanceInput .text-input {
+    margin: 5px 8px;
+  }
+
+  .distanceLabel {
+    letter-spacing: 2px;
+    color: rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+  }
+
+  .distanceInputCol {
+    padding-left: 0;
+  }
+
+  @media only screen and (max-height: 600px) {
+    .optionLabel {
+      font-size: 7.3px;
+    }
+
+    .distanceInput .text-input {
+      margin: 5px;
+    }
+
+    .content-ios .typeLabel {
+      display: flex;
+      height: 17.6px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .clothesCol {
+      height: 63.2px;
+    }
+
+    .sizeTitle {
+      font-size: 12px;
+    }
+
+    .sizeLabel {
+      font-family: Barlow-SemiBold;
+      font-size: 12px;
+    }
+
+    .kidSizeHelperLabel {
+      font-size: 12px;
+    }
+
+    .content-ios .genderFilterSelectedIcon {
+      font-size: 1.1em;
+    }
+
+    .content-ios .typeFilterSelected {
+      height: 32%;
+    }
+
+    .content-ios .typeFilterSelected {
+      height: 29%;
+      width: 40%;
+    }
+
+    .content-ios .typeFilterSelectedIcon {
+      font-size: 1.1em;
+    }
+
+    .content-ios .distanceRangeRightLabelCol {
+      padding-left: 67px;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 700px) {
+    .optionLabel {
+      font-size: 8.5px;
+    }
+
+    .content-md .genderFilterSelected {
+      width: 36%;
+      height: 36%;
+      font-size: 7.5pt;
+      padding-right: 6%;
+      padding-top: 2px;
+    }
+
+    .content-md .typeFilterSelected {
+      height: 30%;
+      font-size: 7.5pt;
+      padding-right: 7%;
+      padding-top: 2px;
+    }
+
+    .content-ios .genderFilterSelected {
+      height: 37%;
+      width: 36%;
+    }
+
+    .content-md .conditionFilterSelectedIcon {
+      top: -4px;
+      font-size: 14px;
+    }
+
+    .content-md .clothesRangeLeftLabelCol {
+      padding-left: 20px;
+    }
+
+    .content-md .clothesRangeRightLabelCol {
+      padding-right: 0;
+    }
+
+    .content-md .sizeRangeLabel {
+      margin-top: -5px;
+    }
+
+    .content-md .shoeRangeLeftLabelCol {
+      padding-left: 21px;
+    }
+
+    .content-md .shoeRangeRightLabelCol {
+      padding-right: 6px;
+    }
+
+    .content-md .priceRangeLeftLabelCol {
+      padding-left: 25px;
+    }
+
+    .content-md .priceRangeLabel {
+      margin-right: 1px;
+      margin-top: -5px;
+    }
+
+    .content-md .distanceRangeLeftLabelCol {
+      padding-left: 25.5px;
+    }
+
+    .content-md .distanceRangeLabel {
+      margin-right: -5px;
+      margin-top: -5px;
+    }
+
+    .distanceLabelCol {
+      width: 50%;
+      max-width: 50%;
+    } 
+  }
+
+  @media only screen and (max-height: 700px) {
+    .back-button-icon-ios {
+      font-size: 30px;
+    }
+
+    .scroll-content {
+      margin-top: 50px !important;
+    }
+
+    .clothesCol {
+      padding-bottom: 0;
+    }
+  }
+
+  @media only screen and (min-height: 700px) and (max-height: 800px) {
+    .genderFilterSelected {
+      height: 38%;
+      width: 36%;
+    }
+
+    .content-md .genderFilterSelected {
+      font-size: 7.5pt;
+      padding-right: 7%;
+      padding-top: 3px;
+      height: 40%;
+    }
+
+    .content-ios .typeFilterSelected {
+      height: 32%;
+    }
+
+    .content-md .typeFilterSelected {
+      font-size: 7.5pt;
+      padding-right: 6%;
+      padding-top: 3px;
+      height: 33%;
+    }
+
+    .content-md .conditionFilterSelectedIcon {
+      top: -4.3px;
+      font-size: 14px;
+    }
+    .content-md .clothesRangeLeftLabelCol {
+      padding-left: 20px;
+    }
+
+    .content-md .clothesRangeRightLabelCol {
+      padding-right: 0;
+    }
+
+    .content-md .sizeRangeLabel {
+      margin-top: -5px;
+    }
+
+    .content-md .shoeRangeLeftLabelCol {
+      padding-left: 21px;
+    }
+
+    .content-md .shoeRangeRightLabelCol {
+      padding-right: 6px;
+    }
+
+    .content-md .priceRangeLeftLabelCol {
+      padding-left: 25px;
+    }
+
+    .content-md .priceRangeLabel {
+      margin-right: 1px;
+      margin-top: -5px;
+    }
+
+    .content-md .distanceRangeLeftLabelCol {
+      padding-left: 25.5px;
+    }
+
+    .content-md .distanceRangeLabel {
+      margin-right: -30px;
+      margin-top: -5px;
+    }
+
+    .content-ios .distanceRangeRightLabelCol {
+      padding-left: 113px;
+    }
+
+    .distanceLabelCol {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+
+  @media only screen and (min-height: 800px) {
+    .content-md .genderFilterSelected {
+      height: 39%;
+      width: 37%;
+      font-size: 8.5pt;
+      padding-right: 7%;
+      padding-top: 2px;
+    }
+
+    .content-md .typeFilterSelected {
+      height: 32%;
+      width: 37%;
+      font-size: 8.5pt;
+      padding-right: 6.5%;
+      padding-top: 2px;
+    }
+
+    .content-ios .genderFilterSelected {
+      height: 36%;
+      width: 36%;
+    }
+
+    .content-md .conditionFilterSelectedIcon {
+      top: -4.3px;
+      font-size: 14px;
+    }
+
+    .content-md .clothesRangeLeftLabelCol {
+      padding-left: 19px;
+    }
+
+    .content-md .clothesRangeRightLabelCol {
+      padding-right: 0;
+    }
+
+    .content-md .sizeRangeLabel {
+      margin-top: -5px;
+      margin-right: 5px;
+    }
+
+    .content-md .shoeRangeLabel {
+      margin-right: 8px;
+    }
+
+    .content-md .shoeRangeLeftLabelCol {
+      padding-left: 21px;
+    }
+
+    .content-md .shoeRangeRightLabelCol {
+      padding-right: 6px;
+    }
+
+    .content-md .priceRangeLeftLabelCol {
+      padding-left: 25px;
+    }
+
+    .content-md .priceRangeLabel {
+      margin-right: 1px;
+      margin-top: -5px;
+    }
+
+    .content-md .distanceRangeLeftLabelCol {
+      padding-left: 25.5px;
+    }
+
+    .content-md .distanceRangeLabel {
+      margin-right: -30px;
+      margin-top: -5px;
+    }
+
+    .distanceLabelCol {
+      width: 50%;
+      max-width: 50%;
+    }
+  }
+
+  .conditionChip {
+    border-radius: 5px;
+    position: relative;
+    background: none;
+    border: 1px solid black;
+    margin: 5px;
+    height: 40px;
+    font-size: 13px;
+    line-height: 32px;
+  }
+
+  .conditionChipLabel {
+    font-family: Barlow-Light;
+    padding: 5px;
+    margin: 0 15px;
+  }
+
+  .colorChip {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin: 5px;
+    margin-left: 4.5px;
+    border: 0.3px solid rgba(0, 0, 0, 0.8);
+  }
+
+  .colorChipContainer {
+    background-color: transparent;
+    height: 35px;
+    display: inline-block;
+    width: 35px;
+    margin-left: 3px;
+    border-radius: 50%;
+  }
+
+  .colorChipBorder {
+    border: 0.5px solid rgb(0, 0, 0);
+  }
+
+  .colorChipLabel {
+    text-align: center;
+    display: block;
+    margin: 0;
+  }
+
+  .blackChipLabel {
+    color: black !important;
+  }
+
+  .colorChipLabelIcon {
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .priceLabelCol {
+    padding-top: 10px;
+    padding-bottom: 0;
+  }
+
+  .priceFields {
+    padding-bottom: 8px;
+  }
+
+  /* ion-footer */
+  .continueBtn {
+    margin: 0;
+    width: 100%;
+    text-transform: uppercase;
+  }
+
+  .footer-md .continueBtn {
+    height: 4.4rem;
+  }
+
+  .footer-md {
+    height: 4.4rem;
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 700px) {
+    .footer-ios {
+      height: 3.3em;
+    }
+  }
+
+  @media only screen and (min-height: 700px) {
+    .footer-ios .continueBtn {
+      height: 3.6em;
+    }
+
+    .footer-ios {
+      height: 4.2em;
+    }
+  }
+
+  .footerBtnContainer {
+    padding: 0;
+  }
+
+  .footerBtnCol {
+    padding: 0;
+  }
+
+  .applyBtn {
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,299 @@
+<ion-header no-border no-shadow>
+
+  <ion-toolbar no-border (click)="openLoginPage()">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button clear class="backController">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+            <label class="backLabel">Back</label>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3></ion-col>
+        <ion-col col-6 class="headerLogoCol">
+          <p class="companyName"><span class="boldDetail">FLOW</span>ROBE</p>
+        </ion-col>
+        <ion-col col-3></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!------| Signup mode |------>
+
+  <div *ngIf="!isEdit">
+    <p class="guide">Create account to continue</p>
+    <ion-grid class="inputContainer">
+      <form [formGroup]="signupForm" novalidate>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>Email Address</ion-label>
+              <ion-input type="email" formControlName="email"
+                         [class.invalid]="!signupForm.controls.email.valid && (signupForm.controls.email.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.email.valid && (signupForm.controls.email.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">Please enter a valid email.</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>Name</ion-label>
+              <ion-input type="text" formControlName="name"
+                         [class.invalid]="!signupForm.controls.name.valid && (signupForm.controls.name.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.name.valid && (signupForm.controls.name.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">Please enter a valid name.</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>Password</ion-label>
+              <ion-input type="password" formControlName="password"
+                         [class.invalid]="!signupForm.controls.password.valid && (signupForm.controls.password.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.password.valid && (signupForm.controls.password.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">It must be at least 8 characters long.</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>Street Address</ion-label>
+              <ion-input type="text" formControlName="street"
+                         [class.invalid]="!signupForm.controls.street.valid && (signupForm.controls.street.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.street.valid && (signupForm.controls.street.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">Street cannot be empty</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>Postal code</ion-label>
+              <ion-input type="text" formControlName="postalCode"
+                         [class.invalid]="!signupForm.controls.postalCode.valid && (signupForm.controls.postalCode.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.postalCode.valid && (signupForm.controls.postalCode.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">Postal code has to be 4 digits</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="inputCol">
+            <ion-item>
+              <ion-label floating>City</ion-label>
+              <ion-input type="text" formControlName="city"
+                         [class.invalid]="!signupForm.controls.city.valid && (signupForm.controls.city.dirty || submitAttempt)">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!signupForm.controls.city.valid && (signupForm.controls.city.dirty || submitAttempt)">
+          <ion-col col-12 class="errorMsgCol">
+            <p class="errorMsg">City cannot be empty</p>
+          </ion-col>
+        </ion-row>
+          <ion-row>
+              <ion-col col-12 class="inputCol">
+                  <ion-item>
+                      <ion-label floating>Phone number</ion-label>
+                      <ion-input type="text" formControlName="phone"
+                                 [class.invalid]="!signupForm.controls.phone.valid && (signupForm.controls.phone.dirty || submitAttempt)">
+                      </ion-input>
+                  </ion-item>
+                  <ion-item>
+                    <ion-label class="infoLabel" text-wrap>Phone number will be needed for picking up packages, onceproducts have been purchased.</ion-label>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.phone.valid && (signupForm.controls.phone.dirty || submitAttempt)">
+              <ion-col col-12 class="errorMsgCol">
+                  <p class="errorMsg">Phone number must be 8 digits</p>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="infoLabelCol">
+
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="createBtnCol">
+            <button ion-button class="createBtn" color="dark" (click)="signUp()">Create Account</button>
+          </ion-col>
+        </ion-row>
+      </form>
+    </ion-grid>
+  </div>
+
+    <!------| Edit mode |------>
+
+    <div *ngIf="isEdit">
+      <ion-grid class="inputContainer">
+        <ion-row>
+          <ion-col col-12 class="avatarImageCol">
+            <img src="assets/imgs/avatar.png"  class="menuAvatarImg">
+            <p class="guide">My information</p>
+          </ion-col>
+        </ion-row>
+        <form [formGroup]="signupForm" novalidate >
+            <ion-row>
+                <ion-col col-12 class="inputCol">
+                  <ion-item *ngIf="!userToEdit.isSuperFlowster">
+                    <ion-label (click)="openBecomeSuperFlowster()">
+                      <a>Buy Early Bird</a>
+                    </ion-label>
+                  </ion-item>
+                  <ion-item *ngIf="userToEdit.isSuperFlowster" >
+                      
+                      <ion-label class="issuperflowster-item">
+                      <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+                      <div class="isuperflowster-text">SuperFlowster</div>  
+                    </ion-label>
+                  </ion-item>
+                </ion-col>
+              </ion-row>
+          <ion-row>
+            <ion-col col-12 class="inputCol">
+              <ion-item>
+                <ion-label floating>Email Address</ion-label>
+                <ion-input type="email" formControlName="email" id="email" [(ngModel)]="userToEdit.email" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                           [class.invalid]="!signupForm.controls.email.valid && (signupForm.controls.email.dirty || submitAttempt)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.email.valid && (signupForm.controls.email.dirty || submitAttempt)">
+            <ion-col col-12 class="errorMsgCol">
+              <p class="errorMsg">Please enter a valid email.</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="inputCol">
+              <ion-item>
+                <ion-label floating>Name</ion-label>
+                <ion-input type="text" formControlName="name" id="name" [(ngModel)]="userToEdit.name" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                           [class.invalid]="!signupForm.controls.name.valid && (signupForm.controls.name.dirty || submitAttempt)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.name.valid && (signupForm.controls.name.dirty || submitAttempt)">
+            <ion-col col-12 class="errorMsgCol">
+              <p class="errorMsg">Please enter a valid name.</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="inputCol">
+              <ion-item>
+                <ion-label floating>Street Address</ion-label>
+                <ion-input type="text" formControlName="street" id="street" [(ngModel)]="userToEdit.street" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                           [class.invalid]="!signupForm.controls.street.valid && (signupForm.controls.street.dirty || submitAttempt)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.street.valid && (signupForm.controls.street.dirty || submitAttempt)">
+            <ion-col col-12 class="errorMsgCol">
+              <p class="errorMsg">Street cannot be empty</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="inputCol">
+              <ion-item>
+                <ion-label floating>Postal code</ion-label>
+                <ion-input type="text" formControlName="postalCode" id="postalCode" [(ngModel)]="userToEdit.postalCode" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                           [class.invalid]="!signupForm.controls.postalCode.valid && (signupForm.controls.postalCode.dirty || submitAttempt)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.postalCode.valid && (signupForm.controls.postalCode.dirty || submitAttempt)">
+            <ion-col col-12 class="errorMsgCol">
+              <p class="errorMsg">Postal code has to be 4 digits</p>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 class="inputCol">
+              <ion-item>
+                <ion-label floating>City</ion-label>
+                <ion-input type="text" formControlName="city" id="city"[(ngModel)]="userToEdit.city" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                           [class.invalid]="!signupForm.controls.city.valid && (signupForm.controls.city.dirty || submitAttempt)">
+                </ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="!signupForm.controls.city.valid && (signupForm.controls.city.dirty || submitAttempt)">
+            <ion-col col-12 class="errorMsgCol">
+              <p class="errorMsg">City cannot be empty</p>
+            </ion-col>
+          </ion-row>
+            <ion-row>
+                <ion-col col-12 class="inputCol">
+                    <ion-item>
+                        <ion-label floating>Phone number</ion-label>
+                        <ion-input type="text" formControlName="phone" id="phone" [(ngModel)]="userToEdit.phone" (focusin)="resetText($event)" (focusout)="focusOut($event)"
+                                   [class.invalid]="!signupForm.controls.phone.valid && (signupForm.controls.phone.dirty || submitAttempt)">
+                        </ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row *ngIf="!signupForm.controls.phone.valid && (signupForm.controls.phone.dirty || submitAttempt)">
+                <ion-col col-12 class="errorMsgCol">
+                    <p class="errorMsg">Phone number must be 8 digits</p>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col col-12 class="inputCol">
+                <ion-item>
+                <ion-label>Language</ion-label>
+                  <ion-select interface="popover">
+                    <ion-option selected value="english">English</ion-option>
+                    <ion-option disabled value="danish">Dansk (Kommer snart...)</ion-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          <ion-row>
+          <ion-col col-12 class="createBtnCol">
+            <button ion-button class="createBtn" color="dark" (click)="updateUserInfo()">Update info</button>
+          </ion-col>
+        </ion-row>
+        </form>
+      </ion-grid>
+  <ion-grid class="btnContainer">
+    <ion-row class="termsContainer">
+      <ion-col col-12 class="termsBtnCol">
+        <button ion-button clear class="termsBtn">Terms & Conditions</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  </div>
+</ion-content>

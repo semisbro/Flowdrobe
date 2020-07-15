@@ -1,0 +1,13 @@
+<div *ngIf="showTutorial">
+  <video autobuffer autoplay
+    poster="https://firebasestorage.googleapis.com/v0/b/fr-test-db.appspot.com/o/tutorialPoster.PNG?alt=media&token=bcb9dd66-0ecc-4133-81d1-f7ab0089fce2"
+    webkit-playsinline>
+    <source
+      src="https://firebasestorage.googleapis.com/v0/b/fr-test-db.appspot.com/o/3in1%20FR%20tutorial.mp4?alt=media&token=d817e02f-1038-4f4e-93d2-082e705331ea"
+      type="video/mp4">
+  </video>
+</div>
+
+<div *ngIf="showTutorial" id="skipContainer" (click)="skipTutorial()">
+  <p>Skip</p>
+</div>

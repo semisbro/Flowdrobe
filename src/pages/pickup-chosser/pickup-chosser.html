@@ -1,0 +1,57 @@
+<!--
+  Generated template for the PickupChosserPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol" (click)="goToMarketplace()">
+          <button ion-button clear class="backController">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol appTitleCol">
+          <p class="appTitle">Choose method</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol"> </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- <div class="button-container">
+    <button (click)="goToSellSelf()" class="chosse-button">
+      <img src="assets/imgs/Hanger.png">
+      <b class="chooseBtnLabel"><p>Upload</p></b>
+      <p>- your fashion and unique leftovers!</p>
+    </button>
+    <button class="chosse-button" (click)="requestPickup()">
+      <img src="assets/imgs/Parcel.png">
+      <b class="chooseBtnLabel"><p>Donate</p></b>
+      <p>- to give your preloved a new life :)</p>
+    </button>
+  </div> -->
+  <div class="button-container">
+    <div>
+      <button (click)="goToSellSelf()" class="chosse-button">
+      <img src="assets/imgs/hanger.png">
+      <b class="chooseBtnLabel"><p>Upload</p></b>
+      <p>- your fashion and unique leftovers!</p>
+    </button>
+    </div>
+    <div>
+      <button class="chosse-button" (click)="requestPickup()">
+      <img src="assets/imgs/parcel.png">
+      <b class="chooseBtnLabel"><p>Donate</p></b>
+      <p>- to give your preloved a new life :)</p>
+    </button>
+    </div>
+    
+  </div>
+</ion-content>
+
+<!-- this.navCtrl.push(UploadpicturePage); -->

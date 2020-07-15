@@ -1,0 +1,592 @@
+page-marketplace {
+  /* ion-header */
+  ion-header {
+    padding: 0;
+    z-index: 1000;
+  }
+
+  ion-toolbar {
+    max-height: 70px;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-family: Barlow-Medium;
+    font-size: 20px;
+  }
+
+  .backIcon {
+    color: black;
+  }
+
+  .backController {
+    padding: 0;
+    font-size: 25px;
+  }
+
+  .appTitleCol {
+    padding: 0;
+  }
+
+  ion-toolbar.toolbar {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar.toolbar-md {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar.toolbar.toolbar-ios {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar .toolbar-md ion-grid {
+    padding-bottom: 0;
+  }
+
+  /* ion-content */
+
+  .fixed-content {
+    margin-top: 68px !important;
+  }
+
+  .contentContainer {
+    padding-top: 0;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 0;
+  }
+
+  .trades {
+    margin-top: 20%;
+  }
+
+  .content-ios .contentContainer {
+    box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+    padding-bottom: 5px;
+  }
+
+  @media only screen and (min-height: 500px) and (max-height: 600px) {
+    .content-ios .scroll-content {
+      padding-top: 20vh !important;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 700px) {
+    .content-md .scroll-content {
+      padding-top: 17vh !important;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 17.5vh !important;
+    }
+  }
+
+  @media only screen and (min-height: 700px) and (max-height: 800px) {
+    .content-md .scroll-content {
+      padding-top: 15vh !important;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 16vh !important;
+    }
+  }
+
+  @media only screen and (min-height: 800px) {
+    .content-md .scroll-content {
+      padding-top: 13vh !important;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 14vh !important;
+    }
+  }
+
+  .content-md .segmentContainer {
+    padding-top: 0;
+  }
+
+  .cardImg {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3);
+  }
+
+  .cardContentContainer {
+    padding: 0;
+    height: 100%;
+  }
+
+  .cardGrid {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    height: 100%;
+  }
+
+  .cardPriceContainer {
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .cardPrice {
+    text-align: left;
+    color: black;
+  }
+
+  .inputItem {
+    width: 1em;
+    height: 1em;
+  }
+
+  .cardTitle {
+    color: black;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 430;
+  }
+
+  .cardTitleContainer {
+    padding-bottom: 0;
+  }
+
+  .cardContent {
+    padding-left: 10px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 80px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  ion-card {
+    border-radius: 5px !important;
+  }
+
+  .locale {
+    font-family: Barlow-SemiBold;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .cartCard {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  .cartCardGrid {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .cart {
+    margin-top: 10px;
+    margin-bottom: 15vh;
+  }
+
+  .content-md .cart {
+    margin-top: 35px;
+  }
+
+  .wishlist {
+    margin-top: 25%;
+  }
+
+  .content-md .wishlist {
+    margin-top: 25%;
+  }
+
+  .cartCardCol {
+    padding-bottom: 0;
+  }
+
+  .cartCardList {
+    margin: 0;
+  }
+
+  .cartCardSliding {
+    margin: 0 0 12px 0;
+  }
+
+  .counter {
+    color: rgba(0, 0, 0, 0.4);
+    font-weight: 800;
+  }
+
+  .cartCardContent {
+    padding-right: 0;
+  }
+
+  .cardLocationIcon {
+    font-size: 1.45em;
+    color: rgba(0, 0, 0, 0.5);
+
+  }
+
+  .cardLocation {
+    word-wrap: break-word;
+  }
+
+  .cartCardPrice {
+    font-weight: 550;
+    padding-right: 5px;
+  }
+
+  .cartCardContainer {
+    padding-top: 0;
+  }
+
+  .marketCard {
+    height: 138px;
+  }
+
+  .cardContentRow {
+    height: 100%;
+  }
+
+  ion-item-sliding {
+    margin: 12px;
+    width: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  ion-item-sliding .item-ios {
+    padding-left: 0;
+  }
+
+  ion-item-sliding .item-md {
+    padding-left: 0;
+  }
+
+  ion-item-sliding .item-inner {
+    padding-right: 0 !important;
+    border: none !important;
+  }
+
+  ion-item-sliding .label-md {
+    margin: 0;
+    height: 100%;
+  }
+
+  ion-item-sliding .label-ios {
+    margin: 0;
+    height: 100%;
+  }
+
+  ion-item-sliding .cardRow {
+    min-height: 138px;
+  }
+
+  ion-item-sliding .item-ios p:last-child {
+    margin-bottom: 2px;
+  }
+
+  ion-item-sliding .card-md p {
+    line-height: 1.5;
+  }
+
+  ion-item-sliding .card-ios p {
+    line-height: 1.5;
+  }
+
+  ion-item-sliding .cardDescription {
+    color: #222;
+  }
+
+  ion-item-sliding ion-label {
+    white-space: normal;
+  }
+
+  ion-item-sliding .card-ios {
+    margin: 0;
+    display: inline;
+  }
+
+  ion-item-sliding .card-md {
+    margin: 0;
+    display: inline;
+  }
+
+  .cartCardSliding .label-ios {
+    max-height: 118px;
+  }
+
+  .cartCardSliding .label-md {
+    max-height: 118px;
+  }
+
+  .cartCardLocationCol {
+    min-height: 35px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+
+  .makeOfferButton{
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border-radius: 4px;
+    color: #797979;
+    border: 2px solid #a9a9a9;
+    font-family: Verdana;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 2px 5px 0 rgba(0,0,0,0.19);
+  }
+
+
+  .offerAlert {
+    button {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .rejectBtnLabel {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .rejectBtn {
+    background-color: #ed5569;
+  }
+
+  .rejectBtn:active {
+    background-color: #f27d8d;
+  }
+
+  .rejectBtnIcon {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .rightSwipe {
+    background-color: #ed5569;
+  }
+
+  .leftSwipe {
+    background-color: #28efad;
+  }
+
+  .confirmBtnLabel {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .confirmBtn {
+    background-color: #28efad;
+  }
+
+  .confirmBtn:active {
+    background-color: #89f4d1;
+  }
+
+  .confirmBtnIcon {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .emptyWishlist {
+    background-image: url(../assets/imgs/emptywishlist.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 15px;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  //
+  //.emptyCart {
+  //  background-image: url(../assets/imgs/emptycart.png);
+  //  position: absolute;
+  //  width: 100%;
+  //  height: 100%;
+  //  top: 35px;
+  //  left: 0;
+  //  background-position: center;
+  //  background-repeat: no-repeat;
+  //  background-size: cover;
+  //}
+
+  /* ion-footer */
+  .cartFooter {
+    background-color: white;
+
+    -webkit-box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  .amount {
+    text-align: right;
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .totalCaption {
+    font-size: 17px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .continueBtn {
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .footer-md .continueBtn {
+    height: 4.6rem;
+  }
+
+  @media only screen and (min-height: 700px) {
+    .footer-ios .continueBtn {
+      height: 3em;
+    }
+  }
+
+  .totalCaptionContainer {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .addController {
+    color: black;
+    font-size: 30px;
+    padding: 0;
+  }
+
+  .imageContainerMP {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .currentImageHolderMP {
+    border: 2px solid black;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .subPictureContainerMP {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .subPictureContainerMP p {
+    color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    font-size: 9pt;
+    text-align: center;
+    font-family: Barlow-Light;
+  }
+
+  .elementContainerMP {
+    height: 15%;
+    width: 100%;
+    background-color: white;
+  }
+}
+
+.elementHolderMP {
+  height: 100%;
+}
+
+.imageColMP {
+  height: 100%;
+}
+
+.imageContainerMP {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  object-fit: fill;
+  object-position: center;
+}
+
+.currentImageHolderMP {
+  border: 2px solid black;
+  box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subPictureContainerMP {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.subPictureContainerMP p {
+  color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  font-size: 10pt;
+  text-align: center;
+  margin: 2px;
+}
+
+.subPictureContainerMP img {
+  height: 52%;
+  display: block;
+  margin: auto;
+  width: auto;
+  opacity: 0.5;
+}
+
+.elementContainerMP {
+  height: 15%;
+  width: 100%;
+}
+
+.alert-primary {
+  font-weight: bold !important;
+}
+
+.alert-secondary {
+  font-weight: normal !important;
+}

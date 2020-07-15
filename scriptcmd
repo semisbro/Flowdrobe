@@ -1,0 +1,10 @@
+   // "clean": "ionic-app-scripts clean",
+    // "build": "ionic-app-scripts build",
+    // "lint": "ionic-app-scripts lint",
+    // "ionic:build": "ionic-app-scripts build",
+    // "ionic:serve": "ionic-app-scripts serve",
+    // "deploy:ios:debug": "node scripts/deploy.js ios debug",
+    // "deploy:ios:dev": "node scripts/deploy.js ios dev",
+    // "deploy:ios:production": "node scripts/deploy.js ios production",
+    // "deploy:android:dev": "node scripts/deploy.js android dev",
+    // "deploy:android:production": "node scripts/deploy.js android production" 

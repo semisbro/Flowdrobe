@@ -1,0 +1,69 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol">
+          <ion-navbar class="backBtn"></ion-navbar>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol">
+          <p class="appTitle">Checkout</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <p class="explanation">Your buys are protected when you pay through our app and FlowRobe will hold your payment until
+    you've recieved your order.</p>
+  <ion-grid class="recapitulative">
+    <ion-row>
+      <ion-col col-6>
+        <p>Item {{title}}</p>
+      </ion-col>
+      <ion-col col-6 text-right>
+        <p>{{this.itemsTotalValue| number : '1.2-2'}} kr</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>
+        Shipping
+      </ion-col>
+      <ion-col col-8 text-right>
+        + 25.00 kr
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <p>Buyer protection</p>
+      </ion-col>
+      <ion-col col-6 text-right>
+        <p>+ 2.50 kr</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="totalRow">
+      <ion-col col-4>
+        Total
+      </ion-col>
+      <ion-col col-8 text-right>
+        {{this.transaction.paymentTotal | number : '1.2-2'}} kr
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <p class="choicePaymentTitle">Payment method</p>
+  <ion-list class="paymentMethodContainer">
+    <button ion-item class="paymentMethodBtn" (click)="openPaymentPage()">
+      <ion-row>
+        <ion-col col-3 class="paymentMethodCol">
+          <img src="assets/icon/mobilepay.svg" alt="MobilePay Logo">
+        </ion-col>
+        <ion-col col-5 class="paymentMethodCol">
+          <p class="paymentMethodLabel mobilepayLabel">Pay with MobilePay</p>
+        </ion-col>
+      </ion-row>
+    </button>
+  </ion-list>
+</ion-content>

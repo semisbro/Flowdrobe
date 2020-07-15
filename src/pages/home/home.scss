@@ -1,0 +1,432 @@
+page-home {
+  ion-content {
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+  }
+
+  /* Ion header CSS */
+
+  ion-header {
+    padding: 0;
+  }
+
+  ion-toolbar {
+    max-height: 70px;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .headerCenterCol {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  .addController span {
+    font-size: 30px;
+  }
+
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    align-self: center;
+  }
+
+  .profileController {
+    padding: 0;
+    color: black;
+    font-size: 30px;
+    margin-left: 10px !important;
+  }
+
+  .marketController {
+    color: black;
+    font-size: 30px;
+    padding: 0;
+  }
+
+  .appTitle {
+    margin-top: 32px;
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .auxBadge {
+    background-color: transparent;
+  }
+
+  #notifications-badge {
+    position: absolute;
+    top: 0;
+    line-height: 22.1px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 0;
+    border-radius: 20px;
+    font-size: 10px;
+  }
+
+  .toolbar-ios #notifications-badge {
+    top: 20px;
+  }
+
+  @media only screen and (min-height: 800px) {
+    #notifications-badge {
+      font-size: 12px;
+      line-height: 25.1px;
+      width: 23px;
+      height: 23px;
+      border-radius: 25px;
+    }
+  }
+
+  /* Ion footer CSS */
+
+  .homeController {
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .motionController {
+    border: none;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .nopeBtn:active {
+    background-color: #ed5569;
+  }
+
+  .nopeBtn:active .closeIcon {
+    color: white;
+  }
+
+  .likeBtn:active {
+    background-color: #28efad;
+  }
+
+  .likeBtn:active .checkMarkIcon {
+    color: white;
+  }
+
+  .footerButtonHolder {
+    justify-content: center;
+  }
+
+  .footerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .checkMarkIcon {
+    font-size: 30px;
+    color: #28efad;
+  }
+
+  .closeIcon {
+    font-size: 30px;
+    color: #ed5569;
+  }
+
+  .optionsIcon {
+    color: black;
+  }
+
+  ion-footer {
+    padding-bottom: 10px;
+    background-color: white;
+  }
+
+  ion-icon {
+    &[class*='custom-'] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      height: 1em;
+    }
+
+    &[class*='custom-market'] {
+      mask-image: url(../assets/icon/marketplace.png);
+    }
+
+    &[class*='custom-profile'] {
+      mask-image: url(../assets/icon/profile.png);
+    }
+
+    &[class*='custom-switchIcon'] {
+      mask-image: url(../assets/icon/calculator.png);
+    }
+
+    &[class*='custom-fire'] {
+      mask-image: url(../assets/icon/fire.svg);
+    }
+  }
+
+  /* Ion content CSS */
+
+  .scroll-content {
+    padding-top: 60px !important;
+  }
+
+  .cardContainer {
+    height: 65vh;
+    margin-top: calc(10vh - 30px);
+  }
+
+  .productImg {
+    height: 50vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .wishlist-info {
+    margin: 0;
+    padding-left: 2px;
+    text-transform: initial;
+    font-size: 16px;
+  }
+
+  .wishlistCol {
+    padding-top: 0;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .wishlistIcon {
+    padding-right: 15px;
+    font-weight: 800;
+    height: 0.9em;
+    width: 0.9em;
+  }
+
+  .wishlistContainer {
+    margin: 0;
+    padding-bottom: 20px;
+    padding-right: 0;
+    color: black;
+    font-weight: 500;
+  }
+
+  @media only screen and (max-height: 600px) {
+    .marketIcon {
+      font-size: 25px;
+    }
+
+    .switchIcon {
+      font-size: 30px;
+    }
+
+    .profileIcon {
+      font-size: 30px;
+    }
+
+    .cardContainer {
+      margin-top: calc(10vh - 40px);
+    }
+
+    .descriptionContainer {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 12px;
+      padding-left: 12px;
+      -webkit-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardTitle {
+      display: block;
+      font-size: 1.3em;
+      line-height: 0.74;
+      color: #222;
+      margin: 2px 0;
+      padding: 8px 0;
+      font-family: Barlow-SemiBold;
+    }
+
+    .cardSubtitle {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8);
+      padding-top: 0;
+      padding-top: 0;
+      position: inherit;
+      float: right;
+      width: fit-content;
+    }
+
+    .wishlistContainer {
+      padding-left: 0;
+      font-size: 14px;
+    }
+  }
+
+  @media only screen and (min-height: 600px) {
+    .marketIcon {
+      font-size: 30px;
+    }
+
+    .profileIcon {
+      font-size: 30px;
+    }
+
+    .cardContainer {
+      margin-top: calc(10vh - 35px);
+    }
+
+    .descriptionContainer {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 16px;
+      padding-left: 16px;
+      -webkit-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardTitle {
+      display: block;
+      font-size: 1.4em;
+      line-height: 1;
+      color: #222;
+      margin: 2px 0;
+      padding: 8px 0;
+      font-family: Barlow-SemiBold;
+    }
+
+    .cardSubtitle {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8);
+      padding-top: 0;
+      padding-top: 0;
+      position: inherit;
+      float: right;
+      width: fit-content;
+    }
+
+    .wishlistContainer {
+      padding-bottom: 14px;
+    }
+
+    .content-ios .wishlistContainer {
+      padding-bottom: 20px;
+    }
+  }
+
+  @media only screen and (min-height: 700px) {
+    .marketIcon {
+      font-size: 36px;
+    }
+
+    .profileIcon {
+      font-size: 36px;
+    }
+
+    .descriptionContainer {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      padding-right: 16px;
+      padding-left: 16px;
+      -webkit-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px -7px 9px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardTitle {
+      display: block;
+      font-size: 1.6em;
+      line-height: 1.2;
+      color: #222;
+      margin: 2px 0;
+      padding: 8px 0;
+      font-family: Barlow-SemiBold;
+    }
+
+    .cardSubtitle {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8);
+      padding-top: 0;
+      padding-top: 0;
+      position: inherit;
+      float: right;
+      width: fit-content;
+    }
+  }
+
+  @media only screen and (min-height: 800px) {
+    .descriptionContainer {
+      padding: 16px;
+    }
+
+    .cardTitle {
+      display: block;
+      font-size: 2.4rem;
+      line-height: 1.2;
+      color: #222;
+      margin: 2px 0;
+      padding: 8px 0;
+      font-family: Barlow-SemiBold;
+    }
+
+    .cardSubtitle {
+      font-size: 2rem;
+      color: rgba(0, 0, 0, 0.8);
+      padding-top: 0;
+      padding-top: 0;
+      position: inherit;
+      float: right;
+      width: fit-content;
+    }
+  }
+
+  .cardCover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .redirectBtn {
+    position: absolute;
+    width: 100%;
+    height: 15vh;
+    top: 50vh;
+    left: 0;
+    background-color: transparent;
+    z-index: 1000;
+  }
+
+  .noCards {
+    background-image: url(../assets/imgs/emptyhome.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
+
+.cardLabel {
+  font-family: Barlow-Light;
+}

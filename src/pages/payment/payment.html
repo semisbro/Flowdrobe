@@ -1,0 +1,76 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol">
+          <ion-navbar class="backBtn"></ion-navbar>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol">
+          <p class="appTitle">Checkout</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row>
+    <ion-col col-2></ion-col>
+    <ion-col col-8 text-center>
+      <img src="assets/imgs/creditcard.png" alt="Creditcard illustration">
+    </ion-col>
+    <ion-col col-2></ion-col>
+    <ion-col col-12 text-center>
+      <p class="amount">{{totalAmount | number: '1.2-2'}} kr</p>
+    </ion-col>
+  </ion-row>
+  <ion-row class="detailsTitleContainer">
+    <ion-col col-12>
+      <p class="detailsTitle">Credit card details</p>
+    </ion-col>
+  </ion-row>
+  <ion-grid class="inputContainer">
+    <form novalidate>
+      <ion-row>
+        <ion-col col-2 class="logoContainer">
+          <img src="assets/icon/mastercard.svg" alt="Mastercard Logo" class="logo">
+        </ion-col>
+        <ion-col col-10 class="cardNumberInputCol">
+          <ion-item class="checkoutInput">
+            <ion-label floating>Card Number</ion-label>
+            <ion-input type="text" [brmasker]="{mask:'0000-0000-0000-0000', len:19}"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-item class="checkoutInput">
+            <ion-label floating>Cardholder Name</ion-label>
+            <ion-input type="text" maxlength="35"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7>
+          <ion-item class="checkoutInput">
+            <ion-label floating>Expiry Date</ion-label>
+            <ion-input type="text" [brmasker]="{mask:'00 / 0000', len:9}"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col col-5>
+          <ion-item class="checkoutInput">
+            <ion-label floating>CVV</ion-label>
+            <ion-input maxlength="4" type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <button text-uppercase ion-button class="payBtn" color="dark" (click)="paySecure()">Pay secure</button>
+</ion-footer>

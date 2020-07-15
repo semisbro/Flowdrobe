@@ -1,0 +1,119 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-6 class="headerButtonCol">
+          <button color="dark" ion-button class="closeBtn" (click)="back()">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-6></ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content no-padding>
+  <ion-slides pager="true">
+    <ion-slide>
+      <div class="sliderContent"> </div>
+    </ion-slide>
+  </ion-slides>
+  <ion-grid class="contentContainer">
+    <ion-row>
+      <ion-col col-12 class="productTitleCol">
+        <h1 class="productTitle">Product Title</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6 class="productPriceCol">
+        <p class="productPrice">Product price kr.</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="productLocationTitleRow">
+      <ion-col class="productLocationTitleCol">
+        <p class="productLocationTitle">Location</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="productAddress"><span class="productLocation">Store name</span> - Street,
+          postalcode city</p>
+      </ion-col>
+    </ion-row>
+    <ion-row class="productDescriptionTitleRow">
+      <ion-col class="productDescriptionTitleCol">
+        <p class="productDescriptionTitle">Details</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="productDescription">description</p>
+      </ion-col>
+    </ion-row>
+    <div class="tableFirstRow">
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-5 class="tableTitleCol">
+          <p class="tableTitle">Size</p>
+        </ion-col>
+        <ion-col col-5 class="tableContentCol">
+          <p class="tableContent">size</p>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-5 class="tableTitleCol">
+          <p class="tableTitle">Condition</p>
+        </ion-col>
+        <ion-col col-5 class="tableContentCol">
+          <p class="tableContent">condition</p>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-5 class="tableTitleCol">
+          <p class="tableTitle">Brand</p>
+        </ion-col>
+        <ion-col col-5 class="tableContentCol">
+          <p class="tableContent">brand</p>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-5 class="tableTitleCol">
+          <p class="tableTitle">Category</p>
+        </ion-col>
+        <ion-col col-5 class="tableContentCol">
+          <p class="tableContent">Category</p>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-1></ion-col>
+        <ion-col col-5 class="tableTitleCol">
+          <p class="tableTitle">Gender</p>
+        </ion-col>
+        <ion-col col-5 class="tableContentCol">
+          <p class="tableContent">gender</p>
+        </ion-col>
+        <ion-col col-1></ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>
+
+<ion-footer class="cartFooter">
+  <ion-grid class="footerBtnContainer">
+    <ion-row class="footerBtnRow">
+      <ion-col col-12 class="footerBtnCol">
+        <button ion-button class="continueBtn addToCartBtn" color="dark">Confirm</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

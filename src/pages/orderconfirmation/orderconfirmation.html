@@ -1,0 +1,54 @@
+<ion-header>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div ion-fixed class="content">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <button ion-button round outline color="secondary" [disabled]="true" class="checkMarkBtn">
+            <ion-icon name="checkmark" class="checkMarkIcon"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <p class="title">Thank you</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center class="subtitleCol">
+          <p class="subtitle">Reservation completed successfully! </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center class="orderNoCol">
+          <p class="subtitle">Order ID | <span class="orderNo">#{{reference}}</span></p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <p class="details">There is only one step to get the product. <br> If the shop accepts the
+            booking, you'll receive a receipt confirming that your payment has been processed and you are able to pick
+            your order. </p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center class="continueBtnCol">
+          <button ion-button color="dark" class="continueBtn" (click)="openHomePage()">
+            Continue shopping
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12 text-center class="trackBtnCol"> 
+          <button ion-button outline color="dark" class="trackBtn" (click)="openReservationPage()">
+            Check status
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

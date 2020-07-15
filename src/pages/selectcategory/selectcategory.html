@@ -1,0 +1,388 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol" (click)="back()">
+          <button ion-button clear class="backController">
+            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol">
+          <p class="appTitle">Upload information</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <!--  <div *ngIf="itemDescriptions && itemDescriptions.gender">
+    <p class="tag">Category</p>
+    <p class="helper">Select category</p>
+    <div class="chipContainer">
+      <ion-chip *ngFor="let gender of itemDescriptions.gender" class="chip {{gender}}"
+        (click)="setGenderDetail(gender)">
+        <ion-label class="chipLabel {{gender}}label">{{gender | titlecase}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+
+  <div class="divider" *ngIf="itemDescriptions && itemDescriptions.type">
+    <p class="tag">Category</p>
+    <p class="helper">Select type</p>
+    <div class="chipContainer">
+      <ion-chip *ngFor="let type of itemDescriptions.type" class="chip {{type}}" (click)="setTypeDetail(type)">
+        <ion-label class="chipLabel {{type}}label">{{type | titlecase}}</ion-label>
+      </ion-chip>
+    </div>
+  </div>
+
+  <div class="divider">
+    <p class="tag">Brand</p>
+    <p class="helper">Add brand</p>
+
+    <ion-item class="brandInputContainer">
+      <ion-input placeholder="Brand name" class="brandInput" type="text" value="" [(ngModel)]="selectedDetails.brand"></ion-input>>
+    </ion-item>
+
+  </div>
+
+  <div class="divider" *ngIf="itemDescriptions && itemDescriptions.color">
+    <p class="tag">Colour</p>
+    <p class="helper colorHelper">What colour is the product?</p>
+    <div class="chipContainer">
+      <ion-chip *ngFor="let color of itemDescriptions.color" class="colorChip {{color}}"
+        [style.background-color]="color" (click)="setColorDetail(color)">
+        <ion-label class="colorChipLabel {{color}}label">
+          <ion-icon [ngClass]="{'blackChipLabel': color === 'white' || color === 'yellow'}" class="colorChipLabelIcon"
+            ios="ios-checkmark-outline" md="ios-checkmark-outline"></ion-icon>
+        </ion-label>
+      </ion-chip>
+    </div>
+  </div>
+
+  <div class="divider biggerSpace">
+    <p class="tag">Size</p>
+    <p class="helper">What size is the product?</p>
+
+    <ion-item class="sizeInputContainer">
+      <ion-label>Please select</ion-label>
+      <ion-select [(ngModel)]="selectedDetails.size">
+        <ion-option value="xxs">XXS - EU 32-34</ion-option>
+        <ion-option value="xs">XS - EU 34-36</ion-option>
+        <ion-option value="s">S - EU 36-38</ion-option>
+        <ion-option value="m">M - EU 38-40</ion-option>
+        <ion-option value="l">L - EU 40-42</ion-option>
+        <ion-option value="xl">XL - EU 42-44</ion-option>
+        <ion-option value="xxl">XXL - EU 44-46</ion-option>
+      </ion-select>
+    </ion-item>
+
+  </div>
+
+  <div class="divider biggerSpace">
+    <p class="tag">Price & Shipping</p>
+    <p class="helper">How much are you selling for?</p>
+
+    <ion-item class="priceInputContainer">
+      <ion-label fixed>Selling price</ion-label>
+      <ion-input class="priceInput" type="number" [(ngModel)]="selectedDetails.price"></ion-input>
+      <p class="valueTag" item-right>kr</p>
+    </ion-item>
+
+  </div>
+ 
+ 
+
+  <div class="divider biggerSpace">
+    <p class="tag">Description</p>
+    <p class="helper">Anything else you want to add?</p>
+
+    <ion-item class="descriptionAreaContainer">
+      <ion-textarea class="descriptionArea" placeholder="Any flaws or marks or some other information about the item."
+        [(ngModel)]="selectedDetails.desc"></ion-textarea>
+    </ion-item>
+
+  </div>
+
+-->
+  <ion-grid>
+    <fieldset *ngIf="filterConditions && filterConditions.gender">
+      <legend>Gender</legend>
+      <ion-row class="optionRow">
+        <ion-col col-1 text-center class="optionCol" *ngFor="let gender of filterConditions.gender" (click)="setDetails(gender.filter, gender.name)">
+          <div *ngIf="selectedDetails && selectedDetails.gender && selectedDetails.gender.indexOf(gender.name) >= 0" class="genderFilterSelected">
+            <ion-icon class="genderFilterSelectedIcon" name="checkmark"></ion-icon>
+          </div>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button clear class="optionController">
+                <img *ngIf="gender.link" [src]="sanitizer.bypassSecurityTrustUrl(gender.link)" class="customIcon">
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 text-center class="optionLabelCol">
+              <p *ngIf="gender.displayName" class="optionLabel">{{gender.displayName}}</p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+    <fieldset *ngIf="filterConditions && filterConditions.type">
+      <legend>Category</legend>
+      <ion-row class="optionRow">
+        <ion-col col-1 text-center class="optionCol clothesCol" *ngFor="let type of filterConditions.type" (click)="setDetails(type.filter, type.name)">
+          <div *ngIf="selectedDetails && selectedDetails.type && selectedDetails.type.indexOf(type.name) >= 0" class="typeFilterSelected">
+            <ion-icon class="typeFilterSelectedIcon" name="checkmark"></ion-icon>
+          </div>
+          <ion-row>
+            <ion-col col-12>
+              <button ion-button clear class="optionController">
+                <img *ngIf="type.link" [src]="sanitizer.bypassSecurityTrustUrl(type.link)" class="customIcon">  
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-12 text-center class="optionLabelCol">
+              <p *ngIf="type.displayName" class="optionLabel typeLabel" [innerHTML]="type.displayName"></p>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+    <fieldset *ngIf="this.selectedDetails.brand && !this.selectedDetails.brand[0]">
+      <legend>Brand</legend>
+      <ion-row>
+        <ion-col col-12 text-left>
+          <button ion-button clear class="searchBtn" item-left (click)="openSearchPage()" text-capitalize>
+            <ion-icon ios="ios-search-outline" md="ios-search-outline" class="searchIcon"></ion-icon>
+            <p class="searchLabel">Search Brands</p>
+          </button>
+        </ion-col>
+      </ion-row>
+      <!--<ion-row>
+        <ion-col col-12 text-center>
+          <p class="dividerText">- OR -</p>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-12>
+          <ion-input placeholder="Add new brand" class="brandInput" type="text" [(ngModel)]="this.selectedDetails.displayBrand" (focusout)="setBrand()"></ion-input>
+        </ion-col>
+      </ion-row>-->
+    </fieldset>
+    <fieldset *ngIf="this.selectedDetails.brand && this.selectedDetails.brand[0]">
+      <legend>Selected Brand</legend>
+      <ion-row class="selectedBrandRow">
+      <ion-chip (click)="removeBrand()" class="chipContainer">
+        <ion-label class="chipLabel">{{this.selectedDetails.displayBrand}}</ion-label>
+        <ion-icon ios="ios-close-outline" md="ios-close-outline" class="chipIcon"></ion-icon>
+      </ion-chip>
+      </ion-row>
+    </fieldset>
+    <fieldset class="sizeFields"
+              *ngIf="filterConditions && filterConditions.size && selectedDetails && selectedDetails.type && (selectedDetails.type.length === 0 || selectedDetails.type.length > 1 || (selectedDetails.type.length === 1 && selectedDetails.type[0] !== 'accessory'))">
+      <legend>Size</legend>
+      <div *ngIf="
+        (
+          selectedDetails.type.length === 0 ||
+          (
+            selectedDetails.type.length === 1 &&
+            selectedDetails.type[0] !== 'shoes'
+          ) ||
+          (
+            selectedDetails.type.length === 2 &&
+            !(selectedDetails.type[0] === 'accessory' && selectedDetails.type[1] === 'shoes') &&
+            !(selectedDetails.type[1] === 'accessory' && selectedDetails.type[0] === 'shoes')
+          ) ||
+          selectedDetails.type.length > 2
+        ) &&
+        (
+          (
+            selectedDetails.gender.length > 0 &&
+            (
+              selectedDetails.gender.indexOf('woman') > -1 ||
+              selectedDetails.gender.indexOf('man') > -1
+            )
+          ) ||
+          selectedDetails.gender.length === 0
+        )">
+        <ion-row>
+          <ion-col col-12 text-center class="sizeTitleCol">
+            <p class="sizeTitle">Clothes size</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center class="sizeLabelCol">
+            <p class="sizeLabel">{{this.clothesSize}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="sizeRangeCol">
+            <ion-item>
+              <ion-range class="sizeRange" color="dark" dualKnobs="false" [(ngModel)]="clothesSizeFilter"
+                         min="1" max="7" step="1" snaps="false" (ionChange)="setBadge(clothesSizeFilter, 'type')"></ion-range>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left class="clothesRangeLeftLabelCol">
+            <ion-label class="sizeRangeLabel">XS</ion-label>
+          </ion-col>
+          <ion-col col-6 text-right class="clothesRangeRightLabelCol">
+            <ion-label class="sizeRangeLabel">3XL</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+      <div *ngIf="selectedDetails.type.length === 0 || selectedDetails.type.indexOf('shoes') > -1">
+        <ion-row>
+          <ion-col col-12 text-center class="sizeTitleCol">
+            <p class="sizeTitle">Shoes size</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center class="sizeLabelCol">
+            <p class="sizeLabel">{{this.shoeSizeValue}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="sizeRangeCol">
+            <ion-item>
+              <!-- a min max érték változó attól függően hogy milyen gender van kiválasztva
+
+              Gyerek: 16-42
+              Nő: 35-42
+              Férfi: 40-47
+
+              Értelemszerűen ha egyszerre több gender is ki van választva akkor aszerint is változzon a min max érték
+              -->
+              <ion-range class="sizeRange" color="dark" dualKnobs="false" [(ngModel)]="shoeSizeValue"
+                         [min]="shoesRangeMin" [max]="shoesRangeMax" step="1" snaps="false"
+                         (ionChange)="setBadge(shoeSizeValue, 'shoes')"></ion-range>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6 text-left class="shoeRangeLeftLabelCol">
+            <ion-label class="sizeRangeLabel">{{shoesRangeMin}}</ion-label>
+          </ion-col>
+          <ion-col col-6 text-right class="shoeRangeRightLabelCol">
+            <ion-label class="sizeRangeLabel shoeRangeLabel">{{shoesRangeMax}}</ion-label>
+          </ion-col>
+        </ion-row>
+      </div>
+      <!-- <div *ngIf="
+      (
+        selectedDetails.type.length === 0 ||
+        (
+          selectedDetails.type.length === 1 &&
+          selectedDetails.type[0] !== 'shoes'
+        ) ||
+        (
+          selectedDetails.type.length === 2 &&
+          !(selectedDetails.type[0] === 'accessory' && selectedDetails.type[1] === 'shoes') &&
+          !(selectedDetails.type[1] === 'accessory' && selectedDetails.type[0] === 'shoes')
+        ) ||
+        selectedDetails.type.length > 2
+      ) &&
+      (
+        (
+          selectedDetails.gender.length > 0 &&
+          selectedDetails.gender.indexOf('kid') > -1
+        ) ||
+        selectedDetails.gender.length === 0
+      )">
+        <ion-row>
+          <ion-col col-12 text-center class="sizeTitleCol">
+            <p class="sizeTitle">Kids size (cm)</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center class="sizeLabelCol">
+            <p class="sizeLabel">{{this.kidSize}}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 class="sizeRangeCol">
+            <ion-item>
+              <ion-range class="sizeRange kidSizeRange" color="dark" dualKnobs="false" [(ngModel)]="kidSizeValue"
+                         min="44" max="170" step="6" snaps="false" (ionChange)="setBadge(kidSizeValue, 'kids')"></ion-range>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-12 text-center class="sizeLabelCol">
+            <p class="kidSizeHelperLabel">{{this.kidHelper}}</p>
+          </ion-col>
+        </ion-row>
+      </div> commented out kids -->
+    </fieldset>
+    <fieldset *ngIf="filterConditions && filterConditions.condition">
+      <legend>Condition</legend>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <ion-chip class="conditionChip" *ngFor="let condition of filterConditions.condition" (click)="setDetails(condition.filter, condition.name)">
+            <ion-label class="conditionChipLabel">{{condition.displayName}}</ion-label>
+            <div *ngIf="selectedDetails && selectedDetails.condition && selectedDetails.condition.indexOf(condition.name) >= 0" class="conditionFilterSelected">
+              <ion-icon class="conditionFilterSelectedIcon" name="checkmark"></ion-icon>
+            </div>
+          </ion-chip>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+    <fieldset *ngIf="filterConditions && filterConditions.color">
+      <legend>Colour</legend>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <div *ngFor="let color of filterConditions.color"
+            [ngClass]="{'colorChipBorder': colorController[color.name]}" class="colorChipContainer item-center"
+            (click)="setDetails(color.filter, color.name)">
+              <ion-chip class="colorChip" [style.background-color]="color.colorCode">
+              <ion-label *ngIf="colorController[color.name]" class="colorChipLabel">
+                <ion-icon [ngClass]="{'blackChipLabel': color.name === 'white'}" class="colorChipLabelIcon"
+                ios="ios-checkmark-outline" md="ios-checkmark-outline"></ion-icon>
+              </ion-label>
+            </ion-chip>
+          </div>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+    <fieldset>
+      <legend>Price</legend>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <ion-item class="priceInputContainer">
+            <ion-label fixed class="priceInputLabel">Selling price</ion-label>
+            <ion-input item-right class="priceInput" [(ngModel)]="selectedDetails.price" type="number"></ion-input>
+            <p class="valueTag" item-right>kr</p>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+    <fieldset>
+      <legend>Description</legend>
+      <ion-row>
+        <ion-col col-12 text-center>
+          <ion-item class="descriptionAreaContainer">
+            <ion-textarea rows="6" cols="20" class="descriptionArea"
+              placeholder="Any flaws or marks or some other information about the item."  [(ngModel)]="selectedDetails.desc">
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </fieldset>
+  </ion-grid>
+</ion-content>
+
+<ion-footer *ngIf="showFooter">
+  <ion-grid class="footerBtnContainer">
+    <ion-row class="footerBtnRow">
+      <ion-col col-12 class="footerBtnCol">
+        <button ion-button class="saveBtn" color="dark" [disabled]="clicked" (click)="upload(); clicked=true;">Upload</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

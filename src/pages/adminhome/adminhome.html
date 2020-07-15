@@ -1,0 +1,278 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar class="hydrated">
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button menuToggle clear class="menuController">
+            <ion-icon ios="ios-menu-outline" md="ios-menu-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerCenterCol">
+          <button ion-button (click)="switchToBuyView()" clear class="marketController">
+            <p class="appTitle"><span class="bold">FLOW</span>ROBE </p>
+          </button>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button clear class="addController" (click)="uploadNewProduct()">
+            <ion-icon ios="ios-add-circle-outline" md="ios-add-circle-outline"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen class="hydrated">
+  <ion-grid class="contentContainer" ion-fixed>
+    <ion-row>
+      <ion-col col-12 class="searchCol">
+        <ion-searchbar type="number" animated (ionInput)="searchInItems($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12 class="segmentContainer">
+        <ion-segment color="dark" [(ngModel)]="adminpage">
+          <ion-segment-button value="wardrobe">
+            Wardrobe
+          </ion-segment-button>
+          <ion-segment-button value="reserved">
+            Requests
+          </ion-segment-button>
+          <ion-segment-button value="waiting">
+            Waiting
+          </ion-segment-button>
+        </ion-segment>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div [ngSwitch]="adminpage">
+    <div *ngSwitchCase="'wardrobe'">
+      <ion-list>
+        <ion-item-sliding *ngFor="let aCloth of availableClothes">
+      <ion-item-options side="left">
+        <button ion-button (click)="editItem(aCloth.id)" class="editBtn">
+          <ion-icon name="custom-edit" class="editBtnIcon"></ion-icon>
+          <p class="editBtnLabel"> &nbsp; &nbsp; &nbsp; &nbsp; Edit &nbsp; &nbsp; &nbsp; &nbsp;</p>
+        </button>
+      </ion-item-options>
+
+      <ion-item>
+        <ion-card>
+          <ion-card-content class="cardContentContainer" (click)="openProductPage(aCloth.id, 'adminhome')">
+            <ion-grid class="cardGrid">
+              <ion-row>
+                <ion-col col-4 class="cardImg" [style.background-image]="aCloth.cardImg">
+                </ion-col>
+                <ion-col col-8 class="cardContent">
+                  <ion-row>
+                    <ion-col col-12 class="cardTitleContainer">
+                      <p class="cardTitle">{{aCloth.title}}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12 class="cardPriceContainer">
+                      <p class="cardPrice">{{aCloth.price}} kr</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12>
+                      <p class="cardDescription">{{aCloth.desc}}</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="deleteItem(aCloth.id)" class="rejectBtn">
+          <ion-icon ios="ios-trash-outline" md="ios-trash-outline" class="deleteBtnIcon"></ion-icon>
+          <p class="rejectBtnLabel">&nbsp; &nbsp; Remove &nbsp; &nbsp;</p>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'reserved'">
+      <ion-list>
+        <ion-item>
+          <ion-col col-12>
+            <p class="locale">Pending buy request <span class="counter">({{offerClothesSeller.length}})</span></p>
+          </ion-col>
+        </ion-item>
+        <ion-item-sliding *ngFor="let resCloth of offerClothesSeller">
+          <ion-item-options side="left">
+            <button ion-button (click)="confirmRequest(resCloth.id)" color="success" class="confirmBtn">
+              <ion-icon name="checkmark" class="confirmBtnIcon"></ion-icon>
+              <p class="confirmBtnLabel"> &nbsp; &nbsp; &nbsp; Accept request &nbsp; &nbsp; &nbsp;</p>
+            </button>
+          </ion-item-options>
+
+          <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+            <ion-card>
+              <ion-card-content class="cardContentContainer">
+                <ion-grid class="cardGrid">
+                  <ion-row class="cardRow">
+                    <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                    </ion-col>
+                    <ion-col col-8 class="cardContent">
+                      <ion-row>
+                        <ion-col col-12 class="cardTitleContainer">
+                          <p class="cardTitle">{{resCloth.title}}</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12 class="cardPriceContainer">
+                          <p class="cardPrice">{{resCloth.buyer.buyerName}}, {{resCloth.buyer.buyerCity}}</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12>
+                          <p class="cardDescription"> has requested a trade</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button (click)="rejectRequest(resCloth.id)" class="rejectBtn">
+              <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+              <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Reject request &nbsp; &nbsp; &nbsp;</p>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+      <ion-list>
+        <ion-item>
+          <ion-col col-12>
+            <p class="locale">Pending pay request <span class="counter">({{offerAcceptedClothesBuyer.length}})</span></p>
+          </ion-col>
+        </ion-item>
+        <ion-item-sliding *ngFor="let resCloth of offerAcceptedClothesBuyer">
+          <ion-item-options side="left">
+            <button ion-button (click)="payItem(resCloth.id, resCloth.uploader.uid, resCloth.price, resCloth.title)" color="success" class="confirmBtn">
+              <ion-icon name="checkmark" class="confirmBtnIcon"></ion-icon>
+              <p class="confirmBtnLabel"> &nbsp; &nbsp; &nbsp; Accept request &nbsp; &nbsp; &nbsp;</p>
+            </button>
+          </ion-item-options>
+          <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+            <ion-card>
+              <ion-card-content class="cardContentContainer">
+                <ion-grid class="cardGrid">
+                  <ion-row class="cardRow">
+                    <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                    </ion-col>
+                    <ion-col col-8 class="cardContent">
+                      <ion-row>
+                        <ion-col col-12 class="cardTitleContainer">
+                          <p class="cardTitle">{{resCloth.title}}</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12 class="cardPriceContainer">
+                          <p class="cardPrice">{{resCloth.buyer.buyerName}}, {{resCloth.buyer.buyerCity}}</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12>
+                          <p class="cardDescription"> has accepted your trade request</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button (click)="rejectRequest(resCloth.id)" class="rejectBtn">
+              <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+              <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Reject request &nbsp; &nbsp; &nbsp;</p>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+    <div *ngSwitchCase="'searched'">
+      <ion-card *ngFor="let searCloth of searchedClothes">
+        <ion-card-content class="cardContentContainer">
+          <ion-grid class="cardGrid">
+            <ion-row>
+              <ion-col col-4 class="cardImg" [style.background-image]="searCloth.cardImg">
+              </ion-col>
+              <ion-col col-8 class="cardContent">
+                <ion-row>
+                  <ion-col col-12 class="cardTitleContainer">
+                    <p class="cardTitle">{{searCloth.description}}</p>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-12 class="cardPriceContainer">
+                    <p class="cardPrice">200,00 kr</p>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-12>
+                    <p class="cardDescription">It is almost brand new bla bla I hate when I don't have any milk for my
+                      cereal. I hate when I don't have any milk for my cereal ssddd dddd dddddd dddddd ddd dddddddd ddd
+                      dddd ddd ddddddddddddddddddddddddddddddddddddddddddddd </p>
+                  </ion-col>
+                </ion-row>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div *ngSwitchCase="'waiting'">
+      <ion-item>
+        <ion-col col-12>
+          <p class="locale">Waiting for acceptance <span class="counter">({{offerClothesBuyer.length}})</span></p>
+        </ion-col>
+      </ion-item>
+      <ion-list>
+        <ion-item-sliding *ngFor="let resCloth of offerClothesBuyer">
+          <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+            <ion-card>
+              <ion-card-content class="cardContentContainer">
+                <ion-grid class="cardGrid">
+                  <ion-row class="cardRow">
+                    <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                    </ion-col>
+                    <ion-col col-8 class="cardContent">
+                      <ion-row>
+                        <ion-col col-12 class="cardTitleContainer">
+                          <p class="cardTitle">{{resCloth.title}}</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12 class="cardPriceContainer">
+                          <p class="cardPrice">{{resCloth.price}} kr</p>
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                        <ion-col col-12>
+                          <p class="cardDescription">{{resCloth.desc}}</p>
+                        </ion-col>
+                      </ion-row>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button (click)="rejectRequest(resCloth.id)" class="rejectBtn">
+              <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+              <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Cancel offer &nbsp; &nbsp; &nbsp;</p>
+            </button>
+          </ion-item-options>
+        </ion-item-sliding>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,245 @@
+<ion-header
+  no-border
+  translucent
+  class="header header-ios header-translucent header-translucent-ios hydrated"
+>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol" (click)="openHomePage()">
+          <button ion-button clear class="backController">
+            <ion-icon
+              ios="ios-arrow-back-outline"
+              md="ios-arrow-back-outline"
+              class="backIcon"
+            ></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerButtonCol appTitleCol">
+          <p class="appTitle">Product history</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol"> </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+<!--<ion-header no-border no-shadow>-->
+<!--  <ion-toolbar no-border (click)="openHomePage()">-->
+<!--    <ion-grid>-->
+<!--      <ion-row>-->
+<!--        <ion-col col-2 class="headerButtonCol">-->
+<!--          <button ion-button clear class="backController">-->
+<!--            <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>-->
+<!--            <label class="backLabel">Back</label>-->
+<!--          </button>-->
+<!--        </ion-col>-->
+<!--      </ion-row>-->
+<!--      <ion-row>-->
+<!--        <ion-col col-3></ion-col>-->
+<!--        <ion-col col-6 class="headerLogoCol">-->
+<!--          <p class="companyName"><span class="boldDetail">Product</span> history</p>-->
+<!--        </ion-col>-->
+<!--        <ion-col col-3></ion-col>-->
+<!--      </ion-row>-->
+<!--    </ion-grid>-->
+<!--  </ion-toolbar>-->
+<!--</ion-header>-->
+
+<ion-content padding fullscreen class="hydrated">
+  <ion-list *ngIf="soldClothes">
+    <ion-item>
+      <ion-col col-12>
+        <p class="locale">
+          Sold products <span class="counter">({{ soldClothes.length }})</span>
+        </p>
+      </ion-col>
+    </ion-item>
+    <ion-item-sliding *ngFor="let item of soldClothes">
+      <!--<ion-item-options side="left">
+          <button ion-button (click)="reactivateItem(item.id)"  class="reactivateBtn">
+            <ion-icon name="custom-forward" class="reactivateBtnIcon"></ion-icon>
+            <p class="reactivateBtnLabel"> &nbsp; Accept &nbsp;</p>
+          </button>
+        </ion-item-options>-->
+      <ion-item>
+        <ion-card>
+          <ion-card-content
+            (click)="openProductPage(item.id)"
+            class="cardContentContainer"
+          >
+            <ion-grid class="cardGrid">
+              <ion-row>
+                <ion-col
+                  col-4
+                  class="cardImg"
+                  [style.background-image]="item.cardImg"
+                >
+                </ion-col>
+                <ion-col col-8 class="cardContent">
+                  <ion-row>
+                    <ion-col col-12 class="cardTitleContainer">
+                      <p class="cardTitle">{{ item.title }}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-1>
+                      <ion-icon
+                        ios="ios-pin-outline"
+                        md="ios-pin-outline"
+                        class="cardLocationIcon"
+                      >
+                      </ion-icon>
+                    </ion-col>
+                    <ion-col col-11 class="cartCardLocationCol">
+                      <p class="cardLocation">
+                        {{ item.buyer.buyerName }}, {{ item.buyer.buyerPhone }}
+                      </p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12 class="cardPriceContainer">
+                      <p class="cardPrice">{{ item.buyer.offer }} kr.</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12>
+                      <p style="color: #00FF00; text-align: end">Sold</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-list *ngIf="boughtClothes">
+    <ion-item>
+      <ion-col col-12>
+        <p class="locale">
+          Bought products<span class="counter"
+            >({{ boughtClothes.length }})</span
+          >
+        </p>
+      </ion-col>
+    </ion-item>
+    <ion-item-sliding *ngFor="let item of boughtClothes">
+      <!--<ion-item-options side="left">
+        <button ion-button class="reactivateBtn">
+          <ion-icon ios="ios-refresh" md="ios-refresh-outline" class="reactivateBtnIcon"></ion-icon>
+          <p class="reactivateBtnLabel returnBtnLabel"> &nbsp; &nbsp; &nbsp; Return &nbsp; &nbsp; &nbsp;</p>
+        </button>
+      </ion-item-options>-->
+      <ion-item>
+        <ion-card>
+          <ion-card-content
+            (click)="openProductPage(item.id)"
+            class="cardContentContainer"
+          >
+            <ion-grid class="cardGrid">
+              <ion-row>
+                <ion-col
+                  col-4
+                  class="cardImg"
+                  [style.background-image]="item.cardImg"
+                >
+                </ion-col>
+                <ion-col col-8 class="cardContent">
+                  <ion-row>
+                    <ion-col col-12 class="cardTitleContainer">
+                      <p class="cardTitle">{{ item.title }}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-1>
+                      <ion-icon
+                        ios="ios-pin-outline"
+                        md="ios-pin-outline"
+                        class="cardLocationIcon"
+                      >
+                      </ion-icon>
+                    </ion-col>
+                    <ion-col col-11 class="cartCardLocationCol">
+                      <p class="cardLocation">
+                        {{ item.uploader.name }}, {{ item.uploader.phone }}
+                      </p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12 class="cardPriceContainer">
+                      <p class="cardPrice">{{ item.buyer.offer }} kr.</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12>
+                      <p style="color: #CCCC00; text-align: end">Bought</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-list *ngIf="deletedClothes">
+    <ion-item>
+      <ion-col col-12>
+        <p class="locale">
+          Deleted products
+          <span class="counter">({{ deletedClothes.length }})</span>
+        </p>
+      </ion-col>
+    </ion-item>
+    <ion-item-sliding *ngFor="let item of deletedClothes">
+      <ion-item-options side="left">
+        <button
+          ion-button
+          (click)="reactivateItem(item.id)"
+          class="reactivateBtn"
+        >
+          <ion-icon name="custom-forward" class="reactivateBtnIcon"></ion-icon>
+          <p class="reactivateBtnLabel">&nbsp; Reactivate &nbsp;</p>
+        </button>
+      </ion-item-options>
+      <ion-item>
+        <ion-card>
+          <ion-card-content
+            (click)="openProductPage(item.id)"
+            class="cardContentContainer"
+          >
+            <ion-grid class="cardGrid">
+              <ion-row>
+                <ion-col
+                  col-4
+                  class="cardImg"
+                  [style.background-image]="item.cardImg"
+                >
+                </ion-col>
+                <ion-col col-8 class="cardContent">
+                  <ion-row>
+                    <ion-col col-12 class="cardTitleContainer">
+                      <p class="cardTitle">{{ item.title }}</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12 class="cardPriceContainer">
+                      <p class="cardPrice">{{ item.price }} kr.</p>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col col-12>
+                      <p style="color: #ed5569; text-align: end">Deleted</p>
+                    </ion-col>
+                  </ion-row>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

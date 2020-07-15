@@ -1,0 +1,860 @@
+<ion-header no-border no-shadow>
+  <ion-toolbar no-border (click)="goBack()">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button clear class="backController">
+            <ion-icon
+              ios="ios-arrow-back-outline"
+              md="ios-arrow-back-outline"
+              class="backIcon"
+            ></ion-icon>
+            <label class="backLabel">Back</label>
+          </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-3></ion-col>
+        <ion-col col-6 class="headerLogoCol">
+          <p *ngIf="isMeetUsPage" class="companyName">
+            <span class="boldDetail">Meet</span> us!
+          </p>
+          <p *ngIf="!isMeetUsPage" class="companyName">
+            <span class="boldDetail">Terms</span> Of
+            <span class="boldDetail">Trade</span>
+          </p>
+        </ion-col>
+        <ion-col col-3></ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngIf="isMeetUsPage">
+    <pre>
+    <span class="boldDetail">Hi</span>, nice to meet you!
+
+    <span class="boldDetail">My</span> name is Simon, and yes. 
+    I pretend to be the founder of 
+    FlowRobe.
+    My dream with this app is to make
+    it more fun and easy for you guys
+    to choose the sustainable option
+    when shopping second hand clothes
+
+    <span class="boldDetail">As</span> Bo Derek once said 
+    "Whoever said money can’t buy happiness, simply didn’t know about FlowRobe"
+
+    <span class="boldDetail">If</span> there's something you do not like
+    about the app, please provide me
+    with your feedback instead of
+    your friends and neighbors.
+    I might be listening. Anyway, don't
+    hesitate to tell your friends and
+    neighbor all the great stuff :)
+
+    <span class="boldDetail">Thank</span> you so much!
+
+    <span class="boldDetail">Simon</span>@flowrobe.com
+  </pre>
+  </ion-item>
+  <ion-item *ngIf="!isMeetUsPage">
+    <pre>
+<span class="boldDetail">Privacy policy and disclosure requirements</span>
+
+Here you can read about your terms 
+and conditions when creating a
+user, during trades and when using
+FlowRobe's app in general. If you
+have any doubts, please
+feel free to contact us at
+simon@flowrobe.com or in a
+message on our Facebook page.
+
+FlowRobe is offered by 
+Robagusta IVS, Coastal Park 78 - 
+6710 Esbjerg V, 
+CVR no. 38,569,120th
+
+
+The conditions consist of 
+seven parts: The first is 
+about the terms of your
+user account. 
+The second part is about common
+terms for trading on FlowRobe.
+The third part is about the terms
+of use of FlowRobe's trading system
+and your rights as a seller and 
+buyer in this context.
+The fourth part deals with the 
+general use of FlowRobe, including
+our expectations of communication 
+between users, which also helps
+to ensure the best experience
+with the platform.
+The fifth part deals with general 
+terms of credit. The sixth section 
+deals with the FlowRobe account 
+and its terms.
+The seventh part is about earning 
+and using “Bonus”.
+Privacy Policy Disclosure
+
+
+<span class="boldDetail">1. User account</span>
+
+<span class="boldDetail">1.1. General terms and conditions</span>
+
+You may only create one user
+account on FlowRobe, which is 
+strictly personal and may not be
+lent to or shared with others.
+FlowRobe is primarily a platform
+for individuals. 
+FlowRobe does not allow business 
+users who sell new goods or large
+lots for resale. However, FlowRobe 
+is happy to allow business users 
+who sell used goods.
+Violation of these rules as well as
+non-authorization may result in 
+exclusion.
+FlowRobe reserves the right to
+suspend or terminate a user's 
+account that is or appears to us 
+to be in violation of the terms
+of use of FlowRobe or applicable 
+law in the country of residence.
+We reserve the right to suspend or
+cancel a user's account and 
+to suspend or cancel listings and
+trades associated with such
+accounts if false registration 
+information or other abuse of 
+FlowRobe's services has been
+provided or if FlowRobe considers
+the user undesirable.
+Persons whose account has been
+suspended or canceled may not
+re-enroll FlowRobe'sservices without
+prior consent.
+This results in the removal of this
+account without notice.
+If you have knowledge or suspicion 
+that others have access to your 
+user account, regardless of the 
+manner in which they have gained
+access, you are obliged to report
+this to FlowRobe. In these cases,
+FlowRobe reserves the right 
+to block that user account.
+You must be 15 years or older 
+to use FlowRobe.
+
+<span class="boldDetail">1.2. Newsletter and advertising</span>
+
+If you agree to receive any 
+marketing material or reminders 
+from FlowRobe, you will receive
+them in the form of emails,
+notifications and push notifications;
+general news and updates from
+FlowRobe, including information
+and offers regarding the FlowRobe
+platform, as well as similar 
+products and services offered by 
+FlowRobe, information and offers
+of new or improved features,
+advertising opportunities, contests
+or promotions regarding FlowRobe
+advertising and / or advertising,
+information and invitations to
+events held by FlowRobe.
+Please note that at any time you
+may withdraw your consent at
+any request and that you may 
+set notifications and push 
+notifications through your
+user account on the Platform.
+We will not disclose your personal
+information to third parties without
+their express consent for their
+marketing purposes.
+
+<span class="boldDetail">1.3. Liability and General Terms Intellectual
+Property Rights</span>
+
+You acknowledge that all 
+copyrights, trademarks and other
+intellectual property rights to
+and relating to FlowRobe's services
+are owned by Robagusta IVS. 
+You may not use these intellectual 
+property rights or FlowRobe's 
+services except to the extent 
+necessary to carry out trades 
+in the manner provided in 
+this Agreement.
+
+<span class="boldDetail">1.4. Lack of access to FlowRobe</span>
+
+FlowRobe cannot guarantee access 
+to our services at any time as
+the servers may be unavailable. 
+There may be both a planned 
+temporary closure or a technical 
+crash, and FlowRobe cannot be held
+responsible for the lack of access 
+that users may experience.
+
+<span class="boldDetail">1.5. Consequential damages</span>
+
+FlowRobe is not liable to you or
+any third party for indirect or
+consequential damages, loss of
+data, profit, revenue or business,
+however caused (whether due to
+negligence or breach of this 
+Agreement or otherwise), although
+such loss or damage could be 
+foreseen by FlowRobe, or FlowRobe
+was made aware that the 
+opportunity was available.
+
+<span class="boldDetail">1.6. Force majeure</span>
+
+FlowRobe is not responsible 
+for any failure to comply with 
+our obligations under this 
+Agreement due to factors beyond
+which FlowRobe is not a master.
+
+<span class="boldDetail">1.7. The effect on rules for using FlowRobe</span>
+
+By signing up for FlowRobe 
+Services, you agree to 
+FlowRobe Terms of Service.
+
+<span class="boldDetail">1.7.1. Changes to the rules for using
+FlowRobe</span>
+
+FlowRobe reserves the right, at any
+time, to change the rules for using
+FlowRobe as well as to introduce
+new versions of FlowRobe's services
+without your consent.
+Therefore, it is important to keep
+abreast of the changes on a regular
+basis.
+However, changes to your detriment
+will always be notified at least 2
+months before the changes take 
+effect. You may withdraw your 
+consent to FlowRobe's rules of 
+use and / or terminate your
+user account at any time
+if you do not wish to be bound by
+the changes.
+
+<span class="boldDetail">1.7.2. Duration of rules for using FlowRobe</span>
+
+The rules apply until they are 
+replaced by new ones.
+This version of the rules governing 
+the use of FlowRobe and FlowRobe's 
+services supersedes those
+previously in effect on
+August 8, 2019.
+
+<span class="boldDetail">2. General terms of trade</span>
+
+This section deals with the general
+terms and conditions for all
+transactions entered into 
+with other users on the FlowRobe 
+platform. In these trades, FlowRobe
+is not a contracting party, and 
+FlowRobe thus functions solely 
+as service providers of an online
+marketplace. For all private trades,
+the law of the country of residence
+applies. For transactions made 
+through FlowRobe's trading system, 
+see section 3 for the
+special rules that apply to 
+these types of transactions.
+
+<span class="boldDetail">2.1. Summary of trade rules</span>
+
+Transactions between private 
+users on FlowRobe are civil 
+purchases. This means, among 
+other things, that the buyer 
+in such civil purchases usually
+does not have a 14-day return 
+policy.
+Therefore, we also encourage
+buyers to complete the transaction
+only when the product is occupied.
+FlowRobe may suspend or close a 
+user account at any time if it
+is assessed in violation of 
+FlowRobe's terms, FlowRobe usage 
+rules, applicable law of the 
+country of residence or other
+good behavior.
+FlowRobe is an advertising 
+medium that makes available 
+exclusively ad slots (postings) to
+users and is therefore not a party
+to trade between users, even if 
+buyers agree to pay 10% of the 
+purchase price for the use of
+the platform.
+Bids placed on an item in the 
+ad or in a conversation are 
+legally binding. You are thus 
+obliged to buy and pay for a 
+product if the seller has accepted
+your offer, as well as if the seller 
+makes an offer which the buyer 
+accepts.
+You can withdraw your bid 
+at any time if the other party 
+has not yet accepted your bid.
+As a seller, you yourself are
+responsible for all statutory
+reports to relevant tax authorities.
+In cases of failure to ship, 
+the seller must always have 
+documentation that the item has 
+been shipped in the form of a Track
+& Trace number or by being
+sent by registered letter.
+A picture of the package, a receipt
+for the purchase of 
+postage / stamps or a postal 
+code is not enough.
+If the seller cannot show the 
+correct documentation for the 
+shipment, this is liable to pay
+and must repay the buyer the full
+amount of the trade. 
+If the seller can document the
+shipment correctly, the risk of 
+the item being lost will 
+be transferred to the buyer.
+
+<span class="boldDetail">2.2. When is a business user considered?</span>
+
+FlowRobe is basically a marketplace
+for buying and selling second-hand
+goods.
+However, commercial sales of
+second-hand goods are allowed and
+handled by FlowRobe under the 
+same conditions as private ones.
+However, the business user who is
+CVR registered is expected to 
+state the company name as well 
+as the CVR listed in the parcel,
+eg. “FlowRobe, Esbjerg 
+(CVR. 38569120)”
+under the user account 
+information in the first and 
+last name field. Please note 
+that the private user who himself
+manufactures goods for resale and
+thus acts as a sole
+proprietorship may sell as private.
+
+<span class="boldDetail">2.3. Dispute settlement between buyer
+and seller</span>
+
+If a conflict occurs in a trade
+outside the FlowRobe trading
+system, you still have the 
+opportunity to report the 
+incident to FlowRobe via 
+simon@flowrobe.com. We will 
+advise in accordance with 
+applicable law and from this
+it is possible to issue
+warnings and / or remove
+the user profile if our 
+rules for using FlowRobe are
+not complied with.
+FlowRobe's support is not required
+to enter into the mediation between
+two parties.
+For conflicts regarding trades
+entered into through FlowRobe's
+trading system, please refer to
+the special rules in section. 3.3.
+
+<span class="boldDetail">2.4. Terms and Conditions of Seller</span>
+
+<span class="boldDetail">2.4.1. Seller's terms and conditions</span>
+
+The contractual terms and 
+conditions in their entirety, 
+which shall apply between buyer 
+and seller in connection with a 
+trade, are those specified by 
+the seller, whether in writing
+or otherwise.
+The obligation to notify the buyer
+of these terms and conditions rests
+with the seller and not FlowRobe.
+
+<span class="boldDetail">2.4.2. Accuracy of ad description</span>
+
+You must accurately describe the
+goods contained in the ad 
+description that you make 
+available through FlowRobe services
+and you are responsible for any 
+errors or omissions in your 
+descriptions, if the goods are
+received in a condition other
+than promised. Brand names or
+other indications of origin
+or make, sizes, dimensions, 
+etc. that you include
+in your product description
+must be completely accurate 
+and must not mislead other users.
+Remember, if there are defects,
+defects or wear and / or have 
+you bought the item used then
+draw attention to this by taking
+a picture of small damage 
+with a possible explanation 
+in the description.
+If a trade is reported for support
+due to misleading or incomplete ad
+description with text and images,
+support will prevail and act in
+accordance with the law of civil
+trades in your country of residence.
+
+<span class="boldDetail">2.4.3. Seller's ownership</span>
+
+You represent, as a seller of any
+item on FlowRobe, that you have
+full ownership of the item and
+that you are entitled to transfer
+this ownership to the buyer.
+
+<span class="boldDetail">2.4.4. Your responsibility as a seller</span>
+
+As a seller, you are responsible
+for ensuring that neither the
+sale of the item itself, the
+item description in the
+advertisement or anywhere else,
+nor any activity or communication
+you undertake in connection with
+any private transaction;
+infringes intellectual property
+or other rights of a natural or
+legal person.
+is a violation of applicable law
+in the country of residence,
+whether criminal, liability or
+otherwise.
+is false, unreliable, misleading,
+offensive or derogatory.
+is of a pornographic nature.
+is listed on FlowRobe's list of
+illegal goods, see section 4.3.
+At the same time, as a private
+seller, you must always be in
+possession of documentation that
+your item has been shipped in the
+form of a Track and Trace number
+or by sending a registered letter
+in cases with no receipt.
+If you are not in possession of
+this and thus cannot prove that
+your item has been shipped, the
+buyer may demand a refund of any
+transferred amount.
+If, on the other hand, as a seller,
+you can document that the item has
+been shipped, but the package has
+not yet been received, you should
+contact the shipping company or
+the post office.
+It is recommended that you agree
+with each other that the item is
+shipped insured.
+
+<span class="boldDetail">2.4.5. Seller's responsibility for bids
+and sales</span>
+
+If you accept a bid as a seller,
+it is legally binding on you and
+the buyer.
+That is, you are required to sell
+the item to the buyer and do not
+have the opportunity to cancel
+the sale.
+Conversely, the buyer is also
+required to buy the item from you,
+and has no right of withdrawal.
+Acceptance of a bid is expressed
+by accepting the trade request,
+which can be found in the
+platform's Marketplace under 
+Trades.
+The Buyer may withdraw the Offer 
+as long as the Offer is not 
+accepted by deleting the Trade 
+Request also in the Platform 
+Marketplace under Trades.
+As soon as the trade request is
+accepted, the parties will be
+given each other's stated telephone
+number for further agreement on
+delivery.
+After that, however, we encourage
+the buyer to use our trading 
+system. If buyer buys from his
+bid or pick-up agreement, it is
+recommended to notify buyer of 
+FlowRobe support through the call,
+as the trading
+request system is an important
+element to create a good user
+experience for the seller.
+Upon pickup, the seller must 
+ensure that the buyer has the 
+opportunity to inspect the item 
+before the deal can be completed.
+Upon shipment, the item must be
+dispatched within 7 days of
+receipt of the money by the 
+buyer, unless otherwise agreed 
+in the trade. Before shipping the 
+product, it is the seller's 
+responsibility to make
+sure that the product is properly
+wrapped.
+Check out the rules set by the
+postal service or other distributor
+in order to properly pack goods.
+
+<span class="boldDetail">2.4.6. Reporting to the tax authorities</span>
+
+It is your responsibility at all
+times to report your taxable income
+from FlowRobe to the tax 
+authorities. FlowRobe cannot 
+therefore be obliged to report a 
+user to the tax authorities,
+nor can FlowRobe be held liable in
+relation to a user's tax situation.
+
+<span class="boldDetail">2.5. Terms and Conditions of Buyer</span>
+
+<span class="boldDetail">2.5.1. Bid</span>
+
+As a buyer, you must be aware that
+all bids placed on seller's ads or
+elsewhere are, as a rule, legally
+binding.
+It is therefore not allowed to simply
+bid "for fun" and this results in a
+warning.
+If this happens repeatedly, it can
+be a reason for exclusion.
+
+<span class="boldDetail">2.5.2. Seeking out illegal trades</span>
+
+As a buyer, you are not allowed to
+attempt to trade in goods that are
+listed on FlowRobe's list of illegal
+goods, such as copy goods, 
+animals, food and beverages.
+
+<span class="boldDetail">2.5.3. Your responsibility as a buyer</span>
+
+As a buyer, you are responsible for
+ensuring that any activity or
+communication you undertake in
+connection with private trades
+does not;
+infringes intellectual property or
+other rights of a natural or legal
+person.
+Is a violation of applicable law,
+whether criminal, liability or
+otherwise.
+Is false, unreliable, misleading,
+offensive or derogatory.
+Is of a pornographic nature.
+When a parcel is delivered to the
+postal service or other carrier,
+the risk of the eventual loss of
+the goods passes to you as the
+buyer if the seller can prove,
+by sending a registered letter
+or by a Track and Trace number,
+that the goods have been 
+dispatched. Agree with each 
+other to send the insured.
+
+<span class="boldDetail">2.5.4. Buyer's responsibility for bids and
+purchases</span>
+
+If you submit a bid and are 
+accepted by the seller, this
+will be legally binding.
+Acceptance of a bid is expressed by
+accepting the trade request, which
+can be found in the platform's
+Marketplace under Trades.
+If you make a sale or indicate that
+you want to buy, you can always
+withdraw it as long as the seller
+has not yet accepted it.
+If the item does not match the
+pictures or description, this is a
+matter between you and your seller.
+See, however, point. 3 if you have
+traded through the FlowRobe 
+trading system.
+Conditions for payment of the goods
+outside FlowRobe's platform are
+mutually agreed between the buyer
+and the seller.
+
+<span class="boldDetail">3. Special rules for using FlowRobe trading
+system</span>
+
+This section deals with the special
+conditions that apply to trades
+entered into through the FlowRobe
+trading system.
+Note that the general trading
+conditions described in paragraph 2.,
+including the rules for bidding,
+seller and buyer terms, etc., also
+apply to this type of trade.
+
+<span class="boldDetail">3.1 In general about FlowRobe's trading
+system</span>
+
+<span class="boldDetail">3.1.1. Use of FlowRobe's trading system</span>
+
+Through a platform, the buyer has
+the opportunity to make a trade
+request that is valid until the
+seller has accepted or the request
+has been deleted. Within this time,
+the seller has the option of either
+accepting or rejecting an offer from
+the buyer.
+If the offer is accepted, this is
+binding on both parties in 
+accordance with 
+Danish law, cf. §1 of the Contract
+Act.
+If FlowRobe or another business
+user acts as a seller, the buyer
+is offered a 14-day full return 
+right, as per the Buying Act.
+
+<span class="boldDetail">3.1.2. Transfer via FlowRobe trading system</span>
+
+When you, as a seller, accept a
+trade request from a buyer through
+FlowRobe's trading system, the
+buyer will be able to complete 
+the payment. 
+Once the payment is completed, it 
+will take up to 7 days for the 
+payment to be processed and the
+seller will receive the money.
+Each transaction has a trade
+ID number that FlowRobe uses to
+subsequently identify the 
+transaction.
+FlowRobe reserves the right 
+to withhold a transaction before 
+the money is disbursed if fraud 
+is suspected. It is important that 
+you, as a buyer, ensure that you 
+have been provided with correct 
+contact information before 
+approving the trade request, so
+that you receive information 
+about the shipment from 
+the shipping company.
+
+<span class="boldDetail">3.1.3. Payment execution</span>
+
+Once a trade request has been
+accepted by the buyer, the seller
+then has 7 days to deliver the 
+parcel in a parcel shop.
+FlowRobe makes a proposal for a 
+place of delivery based on the 
+seller's location, but it can 
+be submitted in any parcel
+shop supported by the carriers with 
+which FlowRobe cooperates.
+The locations will appear on a map 
+during the course of the trade. 
+Once the package has been filed, 
+the money is deducted from the
+buyer's account and the seller
+can expect to see the amount in 
+his bank account within
+1-2 business days.
+
+<span class="boldDetail">3.1.4. Before shipping item</span>
+
+It is the seller's duty to ensure the
+following:
+That the agreed item is shipped in
+the package and that it must 
+be in the condition described.
+Recipient buys the item and thinks
+the item is not as described, the
+buyer has the opportunity to 
+contact FlowRobe Support and start
+a case. As a seller, it is therefore
+important to ensure that
+the item is described in 
+detail, both through the 
+advertisement description but also 
+by means of pictures. See further 
+information on what is
+applicable here in section 2.4. 
+about the seller's terms and 
+conditions.
+That the item is properly wrapped.
+Here, the seller must check the 
+shipping company's packaging 
+requirements to ensure that the 
+packaging of the product
+complies with these. If the item 
+does not meet the packaging 
+requirements and when the item 
+arrives to the buyer in damaged 
+condition, the seller will be 
+held liable.
+That the correct weight and size 
+of the parcel is stated so that 
+it does not exceed the carrier's 
+requirements when the parcel is 
+delivered. If the package exceeds 
+the carrier's weight and / or size 
+requirements, the carrier may 
+legitimately do one of the 
+following 1) refuse to ship
+the item, or 2) post-invoice for
+the weight / size difference.
+FlowRobe reserves the right to 
+forward any.after sales invoicing
+That the item is filed in a 
+parcel shop within 7 days after 
+the merchant request has been 
+approved by the buyer. If the item
+is not delivered, the
+reservation will end in the buyer's
+bank account and the transaction 
+will be canceled.
+
+<span class="boldDetail">3.1.5. Shipping and delivery</span>
+
+Within 7 days after a trade request
+is accepted by both parties, the 
+item must be dispatched.
+Both parties will be kept informed
+along the way about the goods 
+to the buyer. Once the item has 
+arrived at the buyer’s chosen 
+package store, it can be picked up
+by the buyer. The delivery time for
+parcels is usually between 1-4 days 
+after delivery. The package will 
+be ready for pick-up for up to 
+14 days, after which it will be 
+returned to the shipper if it has 
+not been picked up by the buyer.
+If there is a problem with the 
+item when the item has been 
+received, see point 3.2.
+
+<span class="boldDetail">3.1.6. Validation & Security Check</span>
+
+For security reasons, if you 
+trade for larger amounts, you 
+may be asked to
+verify with FlowRobe Support. 
+This is also the case if you 
+collect goods for a larger amount.
+Trades via the FlowRobe trading
+system are systematically 
+monitored and some trades are 
+manually checked for security.
+For security reasons, the exact
+reasons for checking are 
+confidential, but they are based
+on one or more parameters such 
+as: amount, item type, brand,
+user history, etc.
+If a trade is security-approved 
+manually, the seller will 
+typically experience a
+delay in payment for the item.
+In that case, the seller will 
+receive a notification about 
+the delay. This is usually 
+withheld until the package is 
+registered as received by
+the buyer, after which the 
+money is paid out as soon as 
+possible, typically after
+1-2 business days.
+The seller's FlowRobe Account 
+shows that the money is on its 
+way to the seller.
+
+<span class="boldDetail">3.1.7. Security of money transactions</span>
+
+The FlowRobe trading system
+uses the payment gateway 
+Stripe or MobilePay.
+The system uses SSL encryption 
+for all transmission. All data 
+is strictly encrypted.
+Stripe and Mobilepay are PCI 
+certified, which means that 
+Stripe and Mobilepay comply 
+with the Visa / Mastercard
+security rules.
+
+<span class="boldDetail">3.1.8. Fees at FlowRobe trading system</span>
+
+The buyer and seller trade 
+insured, and if any problems 
+arise in the trade, they will 
+receive support from 
+FlowRobe, see section 3.3.
+For this service, we charge a 
+small fee of 2.5% respectively.
+buyer and seller.
+The fee is calculated on the 
+basis of the total trade amount.
+
+
+
+    </pre>
+  </ion-item>
+</ion-content>

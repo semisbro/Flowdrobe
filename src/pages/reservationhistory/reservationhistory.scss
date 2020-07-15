@@ -1,0 +1,127 @@
+page-reservationhistory {
+  /* ion-header */
+  ion-header {
+    padding: 0;
+    z-index: 1000;
+  }
+
+  ion-toolbar {
+    max-height: 70px;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  .backIcon {
+    color: black;
+  }
+
+  .backController {
+    padding: 0;
+    font-size: 25px;
+  }
+
+  .appTitleCol {
+    padding: 0;
+  }
+
+  ion-toolbar.toolbar {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar.toolbar-md {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar.toolbar.toolbar-ios {
+    min-height: 14px !important;
+  }
+
+  ion-toolbar .toolbar-md ion-grid {
+    padding-bottom: 0;
+  }
+
+  /* ion-content */
+
+  .content-ios .scroll-content {
+    padding-top: 0 !important;
+  }
+
+  .content-md .scroll-content {
+    padding-top: 0 !important;
+  }
+
+  .subtitle {
+    padding-left: 6px;
+    padding-right: 6px;
+    color: rgba(0, 0, 0, 0.4);
+    margin-top: 0;
+    letter-spacing: 0.4px;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    font-weight: 800;
+  }
+
+  .cardLocationIcon {
+    font-size: 1.45em;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  .cardLocation {
+    word-wrap: break-word;
+  }
+
+  .cartCardLocationCol {
+    padding-left: 10px;
+  }
+
+  .priceTag {
+    font-weight: bold;
+  }
+
+  .totalAmountRow {
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    padding-top: 13px;
+    margin-top: 10px;
+  }
+
+  .detailsCol {
+    padding-bottom: 10px;
+  }
+
+  .totalRow {
+    font-weight: bold;
+  }
+
+  .itemRow {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 5px;
+  }
+
+  .status {
+    font-weight: 400;
+    letter-spacing: 0.5px;
+  }
+
+  .imgCol {
+    align-items: center;
+    display: flex;
+  }
+}

@@ -1,0 +1,420 @@
+page-adminhome {
+  /* Ion header CSS */
+
+  ion-header {
+    padding: 0;
+  }
+
+  ion-toolbar {
+    max-height: 70px;
+  }
+
+    .bold {
+    font-weight: bold;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  .headerButtonHolder {
+    justify-content: center;
+  }
+  .headerCenterCol{
+    text-align: center;
+  }
+
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .menuController {
+    padding: 0;
+    color: black;
+    font-size: 30px;
+  }
+
+  .addController {
+    color: black;
+    padding: 0;
+  }
+
+  .addController span {
+    font-size: 30px;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-size: 20px;
+  }
+
+  /* ion content CSS*/
+
+  .contentContainer {
+    padding-top: 0;
+    background-color: white;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .searchCol {
+    padding-top: 0;
+  }
+
+  @media only screen and (min-height: 500px) and (max-height: 600px) {
+    .content-ios .scroll-content {
+      padding-top: 28vh !important;
+    }
+
+    .switchIcon{
+      font-size: 35px;
+    }
+  }
+
+  @media only screen and (min-height: 600px) and (max-height: 700px) {
+    .content-md .scroll-content {
+      padding-top: 28vh !important;
+    }
+
+    .switchIcon{
+      font-size: 35px;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 24vh !important;
+    }
+  }
+
+  @media only screen and (min-height: 700px) and (max-height: 800px) {
+    .content-md .scroll-content {
+      padding-top: 25vh !important;
+    }
+
+    .switchIcon{
+      font-size: 35px;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 22vh !important;
+    }
+  }
+
+  @media only screen and (min-height: 800px) {
+    .content-md .scroll-content {
+      padding-top: 21vh !important;
+    }
+
+    .switchIcon{
+      font-size: 35px;
+    }
+
+    .content-ios .scroll-content {
+      padding-top: 20vh !important;
+    }
+  }
+
+  .content-md .segmentContainer {
+    padding-top: 0;
+  }
+
+  ion-item-sliding {
+    margin: 12px;
+    width: auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  ion-item-sliding .item-ios {
+    padding-left: 0;
+  }
+
+  ion-item-sliding .item-md {
+    padding-left: 0;
+  }
+
+  ion-item-sliding .item-inner {
+    padding-right: 0 !important;
+    border: none !important;
+  }
+
+  ion-item-sliding .label-md {
+    margin: 0;
+  }
+
+  ion-item-sliding .label-ios {
+    margin: 0;
+  }
+
+  ion-item-sliding .cardRow {
+    min-height: 138px;
+  }
+
+  ion-item-sliding .item-ios p:last-child {
+    margin-bottom: 2px;
+  }
+
+  ion-item-sliding .card-md p {
+    line-height: 1.5;
+  }
+
+  ion-item-sliding .card-ios p {
+    line-height: 1.5;
+  }
+
+  ion-item-sliding .cardDescription {
+    color: #222;
+  }
+
+  ion-item-sliding ion-label {
+    white-space: normal;
+  }
+
+  ion-item-sliding .card-ios {
+    margin: 0;
+    display: inline;
+  }
+
+  ion-item-sliding .card-md {
+    margin: 0;
+    display: inline;
+  }
+
+  .confirmBtnLabel {
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .confirmBtn {
+    background-color: #28efad !important;
+  }
+
+  .confirmBtn:active {
+    background-color: #89f4d1 !important;
+  }
+
+  .rejectBtnLabel {
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  .rejectBtn {
+    background-color: #ed5569 !important;
+  }
+
+  .rejectBtn:active {
+    background-color: #f27d8d !important;
+  }
+
+  .rejectBtnIcon {
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 0 !important;
+  }
+
+  .deleteBtnIcon {
+    font-weight: bold;
+  }
+
+  .editBtnLabel {
+    font-size: 14px;
+    margin: 0;
+    text-transform: uppercase;
+    margin-top: 8px;
+  }
+
+  .editBtn {
+    background-color: #6897d4 !important;
+  }
+
+  .editBtn:active {
+    background-color: rgba(104, 151, 212, 0.8) !important;
+  }
+
+  .editBtnIcon {
+    font-weight: bold;
+  }
+
+  .confirmBtnIcon {
+    font-weight: bold;
+    font-size: 35px;
+    padding-bottom: 0 !important;
+  }
+
+  ion-icon {
+    &[class*="custom-"] {
+      mask-size: contain;
+      mask-position: 50% 50%;
+      mask-repeat: no-repeat;
+      background: currentColor;
+      width: 1em;
+      padding-bottom: 0.3em;
+      height: 1em;
+      margin-right: 6px;
+    }
+
+    &[class*="custom-edit"] {
+      mask-image: url(../assets/icon/edit.svg);
+    }
+
+    &[class*="custom-switchIcon"]{
+      mask-image: url(../assets/icon/calculator.png);
+    }
+  }
+
+  .cardImg {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 6px 13px rgba(0, 0, 0, 0.3);
+  }
+
+  .cardContentContainer {
+    padding: 0;
+  }
+
+  .cardGrid {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+
+  .cardPriceContainer {
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .cardPrice {
+    text-align: left;
+    color: black;
+  }
+
+  .cardTitle {
+    color: black;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .cardTitleContainer {
+    padding-bottom: 0;
+  }
+
+  .cardContent {
+    padding-left: 10px;
+  }
+
+  .cardDescription {
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    max-height: 80px;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+  }
+
+  ion-card {
+    border-radius: 5px !important;
+  }
+
+  .itemRow {
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 5px;
+  }
+
+  .imgCol {
+    align-items: center;
+    display: flex;
+  }
+
+  .detailsCol {
+    padding-top: 10px;
+    margin: auto;
+  }
+
+  .title {
+    font-weight: 800;
+  }
+
+  .priceTag {
+    font-weight: bold;
+  }
+
+  .totalAmountRow {
+    border-top: 2px solid rgba(0, 0, 0, 0.4);
+    padding-top: 13px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  .waitingReadyCol {
+    padding: 0;
+  }
+
+  .waitingReadyItem {
+    padding: 0;
+  }
+
+  .waitingPriceCol {
+    padding-bottom: 0;
+  }
+
+  .item-ios.item-block .item-inner {
+    font-size: 14px;
+  }
+
+  .item-md.item-block .item-inner {
+    font-size: 14px;
+  }
+
+  .item.item-md .checkbox-md {
+    margin-right: 9px;
+  }
+
+  .item.item-ios .checkbox-ios {
+    margin-right: 8px;
+  }
+
+  .checkbox-ios .checkbox-checked {
+    border-color: #28efad;
+    background-color: #28efad;
+  }
+
+  .checkbox-md .checkbox-checked {
+    border-color: #28efad;
+    background-color: #28efad;
+  }
+
+  .accordionContentContainer {
+    padding-top: 0;
+  }
+
+  .deliveryInformationRow {
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .deliveryInformation {
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .deliveryAddressRow {
+    margin-bottom: 5px;
+  }
+
+  .deliveryAddressCol {
+    padding-top: 0;
+  }
+}

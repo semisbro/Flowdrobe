@@ -1,0 +1,174 @@
+page-search {
+  /* ion-header */
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-size: 20px;
+    margin-top: 16px;
+  }
+
+  .backIcon {
+    color: black;
+    width: 100%;
+    text-align: left;
+  }
+
+  .backController {
+    padding: 0;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  ion-header {
+    padding: 0;
+    box-shadow: 0px -2px 9px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  ion-toolbar {
+    max-height: 60px;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  ion-navbar .back-button-ios {
+    border: none;
+    height: 40px;
+    width: 40px;
+    color: black;
+  }
+
+  @media only screen and (max-height: 600px) {
+    ion-navbar .back-button-ios {
+      border: none;
+      height: 40px;
+      width: 40px;
+      color: black;
+      padding-top: 5px;
+    }
+  }
+
+  .back-button-text {
+    display: none;
+  }
+
+  .back-button-text-ios {
+    display: none;
+  }
+
+  .saveController {
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: capitalize;
+  }
+
+  .saveBtnCol {
+    padding-right: 10px;
+  }
+
+  .saveLabel {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 13px;
+  }
+
+  @media only screen and (max-height: 700px) { 
+    .toolbar-md {
+      min-height: 46px;
+    }
+
+    ion-toolbar {
+      max-height: 50px;
+    }
+
+    .appTitle {
+      font-size: 18px;
+      margin-top: 18px;
+    }
+
+    .saveLabel {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
+
+  /* ion-content */
+  .brandListItem {
+    padding-left: 0;
+    border-radius: 5px;
+  }
+
+  .brandListItem .item-inner {
+    padding: 0 !important;
+  }
+
+  .label-ios {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .label-md {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .brandLabel {
+    height: 100%;
+    width: 100%;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+  }
+
+  .item-ios {
+    border-top: 0px !important;
+  }
+
+  .searchbar-ios {
+    background: inherit;
+    padding: 8px;
+  }
+
+  .searchbar-ios .searchbar-search-icon {
+    left: 20px;
+    top: 13px;
+    position: absolute;
+    background-repeat: no-repeat;
+    color: #141414;
+    width: 21px;
+    height: 21px;
+  }
+
+  .searchbar-ios .searchbar-input {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+      0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    padding: 6px 43px !important;
+    border-radius: 2px;
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 3rem;
+    color: #141414;
+    background-color: #fff;
+  }
+
+  .selected {
+    background-color: black;
+    color: white;
+  }
+}

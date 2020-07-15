@@ -1,0 +1,222 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6 class="headerButtonCol">
+                    <button color="dark" ion-button class="closeBtn" (click)="back()">
+                        <ion-icon
+                                ios="ios-arrow-back-outline"
+                                md="ios-arrow-back-outline"
+                                class="backIcon"
+                        ></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-6></ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content no-padding>
+    <ion-slides pager="true">
+        <ion-slide *ngFor="let slide of slider">
+            <div
+                    (click)="zoomImage(slide.image)"
+                    [ngStyle]="{ 'background-image': 'url(' + slide.image + ')' }"
+                    class="sliderContent"
+            ></div>
+        </ion-slide>
+    </ion-slides>
+    <ion-grid class="contentContainer" [ngClass]="{ placeholder: !fromCart }">
+        <ion-row>
+            <ion-col col-12 class="productTitleCol">
+                <h1 class="productTitle">{{ product.title }}</h1>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6 class="productPriceCol">
+                <p class="productPrice" *ngIf="product.price">
+                    {{ product.price | number: '1.2-2' }} kr.
+                </p>
+            </ion-col>
+            <ion-col
+                    *ngIf="startingPoint !== 'adminhome'"
+                    col-6
+                    text-right
+                    class="wishlistCol"
+            >
+                <button
+                        ion-button
+                        clear
+                        item-right
+                        [disabled]="true"
+                        class="wishlistContainer"
+                >
+                    <ion-icon class="wishlistIcon" name="custom-fire"></ion-icon>
+                    <p
+                            class="wishlist"
+                            *ngIf="product.whislists && product.whislists > 0; else noWishlist"
+                    >
+                        in {{ product.whislists }} wishlist<span
+                            *ngIf="product.whislists > 1"
+                    >s</span
+                    >
+                    </p>
+                    <ng-template #noWishlist>
+                        <p class="wishlist smallerLetters">Be the first to like it</p>
+                    </ng-template>
+                </button>
+            </ion-col>
+        </ion-row>
+        <ion-row class="productLocationTitleRow">
+            <ion-col class="productLocationTitleCol">
+                <p class="productLocationTitle">Location</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <p class="productAddress">
+          <span class="productLocation"
+          >{{ sellerName }}, {{ sellerLocation }}</span
+          >
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row class="productLocationTitleRow">
+            <ion-col class="productLocationTitleCol">
+                <p class="productLocationTitle">Contact</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <p class="productAddress">
+                    <button (click)="callUser()" class="contactButton">
+                        <div>
+
+                            <ion-icon name="call"></ion-icon>
+                            <label>{{ sellerNumber }}</label>
+
+
+                        </div>
+                    </button>
+                </p>
+                <p class="productAddress">
+                    <button (click)="sendEmail()" class="contactButton">
+                        <div>
+
+                            <ion-icon name="mail"></ion-icon>
+                            <label>{{ sellerEmail }}</label>
+                        </div>
+                    </button>
+                </p>
+            </ion-col>
+        </ion-row>
+        <ion-row class="productDescriptionTitleRow">
+            <ion-col class="productDescriptionTitleCol">
+                <p class="productDescriptionTitle">Details</p>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <p class="productDescription">{{ product.desc }}</p>
+            </ion-col>
+        </ion-row>
+        <div class="tableFirstRow">
+            <ion-row *ngIf="product.size">
+                <ion-col col-1></ion-col>
+                <ion-col col-5 class="tableTitleCol">
+                    <p class="tableTitle">Size</p>
+                </ion-col>
+                <ion-col
+                        *ngIf="product.size.type === 'cSize'"
+                        col-5
+                        class="tableContentCol"
+                >
+                    <p class="tableContent">{{ product.size.cSize }}</p>
+                </ion-col>
+                <ion-col
+                        *ngIf="product.size.type === 'sSize'"
+                        col-5
+                        class="tableContentCol"
+                >
+                    <p class="tableContent">{{ product.size.sSize }}</p>
+                </ion-col>
+                <ion-col
+                        *ngIf="product.size.type === 'kSize'"
+                        col-5
+                        class="tableContentCol"
+                >
+                    <p class="tableContent">
+                        {{ product.size.kSize }} / {{ product.size.kSizeHelp }}
+                    </p>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+            <ion-row *ngIf="product.conditionDisplayName">
+                <ion-col col-1></ion-col>
+                <ion-col col-5 class="tableTitleCol">
+                    <p class="tableTitle">Condition</p>
+                </ion-col>
+                <ion-col col-5 class="tableContentCol">
+                    <p class="tableContent">{{ product.conditionDisplayName }}</p>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+            <ion-row *ngIf="product.brandDisplayName">
+                <ion-col col-1></ion-col>
+                <ion-col col-5 class="tableTitleCol">
+                    <p class="tableTitle">Brand</p>
+                </ion-col>
+                <ion-col col-5 class="tableContentCol">
+                    <p class="tableContent">{{ product.brandDisplayName }}</p>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+            <ion-row *ngIf="product.typeDisplayName">
+                <ion-col col-1></ion-col>
+                <ion-col col-5 class="tableTitleCol">
+                    <p class="tableTitle">Category</p>
+                </ion-col>
+                <ion-col col-5 class="tableContentCol">
+                    <p class="tableContent" [innerHTML]="product.typeDisplayName"></p>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+            <ion-row *ngIf="product.genderDisplayName">
+                <ion-col col-1></ion-col>
+                <ion-col col-5 class="tableTitleCol">
+                    <p class="tableTitle">Gender</p>
+                </ion-col>
+                <ion-col col-5 class="tableContentCol">
+                    <p class="tableContent">{{ product.genderDisplayName }}</p>
+                </ion-col>
+                <ion-col col-1></ion-col>
+            </ion-row>
+        </div>
+    </ion-grid>
+</ion-content>
+
+<ion-footer class="cartFooter" *ngIf="!fromCart">
+    <ion-grid class="footerBtnContainer">
+        <ion-row class="footerBtnRow">
+            <ion-col col-12 class="footerBtnCol">
+                <button
+                        ion-button
+                        class="continueBtn addToCartBtn"
+                        [class.redBack]="startingPoint === 'wishlist'"
+                        color="dark"
+                        (click)="
+            startingPoint === 'marketplace'
+              ? addToCart(product.id)
+              : addToWishList(product.id)
+          "
+                        [hidden]=isOwnProduct(product)
+                >
+                    {{
+                    startingPoint === 'marketplace' ? 'Add to cart' : 'Add to wishlist'
+                    }}
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

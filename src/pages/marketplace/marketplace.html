@@ -1,0 +1,524 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+    <ion-toolbar>
+        <ion-grid>
+            <ion-row class="headerButtonHolder">
+                <ion-col col-2 class="headerButtonCol" (click)="openHomePage()">
+                    <button ion-button clear class="backController">
+                        <ion-icon ios="ios-arrow-back-outline" md="ios-arrow-back-outline" class="backIcon"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col col-8 class="headerButtonCol appTitleCol">
+                    <p class="appTitle">Marketplace</p>
+                </ion-col>
+                <ion-col col-2 class="headerButtonCol">
+                    <button ion-button clear class="addController" (click)="uploadNewProduct()">
+                        <ion-icon ios="ios-add-circle-outline" md="ios-add-circle-outline"></ion-icon>
+                    </button>
+                </ion-col>
+                <!--<ion-col col-2 class="headerButtonCol">
+                </ion-col>-->
+            </ion-row>
+        </ion-grid>
+    </ion-toolbar>
+</ion-header>
+<ion-content padding fullscreen class="hydrated">
+    <ion-grid class="elementContainerMP" ion-fixed>
+        <ion-row class="elementHolderMP">
+            <ion-col col-4 class="imageColMP">
+                <div [className]="marketpage === 'wardrobe' ? 'currentImageHolderMP imageContainerMP': ' imageContainerMP'"
+                     (click)="goToPage('wardrobe')">
+                    <div class="subPictureContainerMP">
+                        <img src="../../assets/icon/købsMode.png"/>
+                        <p>Wardrobe</p>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col col-4 class="imageColMP">
+                <div [className]="marketpage === 'wishlist' ? 'currentImageHolderMP imageContainerMP': ' imageContainerMP'"
+                     (click)="goToPage('wishlist')">
+                    <div class="subPictureContainerMP">
+                        <img src="../../assets/icon/wishlist_icon.svg"/>
+                        <p>Wishlist</p>
+                    </div>
+                </div>
+            </ion-col>
+            <ion-col col-4 class="imageColMP">
+                <div [className]="marketpage === 'trades' ? 'currentImageHolderMP imageContainerMP': ' imageContainerMP'"
+                     (click)="goToPage('trades')">
+                    <div class="subPictureContainerMP">
+                        <img src="../../assets/icon/iconmonstr-handshake-5.svg"/>
+                        <p>Trades</p>
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div [ngSwitch]="marketpage" style="z-index: 0">
+        <div *ngSwitchCase="'wishlist'" class="wishlist">
+            <ion-row>
+                <ion-col col-12>
+                    <p class="locale" Products in wardrobe> Wishlist <span class="counter">({{likedItems.length}}
+                        )</span></p>
+                </ion-col>
+                <span></span>
+            </ion-row>
+            <ion-list *ngIf="likedItems.length > 0; else outOfCards">
+                <ion-item-sliding *ngFor="let c of likedItems">
+                    <ion-item-options side="left" class="leftSwipe">
+                        <button ion-button (click)="takeToCart(c)" class="confirmBtn" color="secondary">
+                            <ion-icon ios="ios-basket-outline" md="ios-basket-outline"
+                                      class="confirmBtnIcon"></ion-icon>
+                            <p class="confirmBtnLabel"> &nbsp; &nbsp; Add to cart &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                    <ion-item class="marketCard" (click)="openProductPage(c.id, 'marketplace')">
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardContentRow">
+                                        <ion-col col-4 class="cardImg" *ngIf="c.imgUrl"
+                                                 [style.background-image]="c.imgUrl">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{c.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">{{c.price}} kr</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">{{c.description}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+
+                    <ion-item-options side="right" class="rightSwipe">
+                        <button ion-button class="rejectBtn" (click)="removeFromWishlistAlert(c)" color="danger">
+                            <ion-icon ios="ios-trash-outline" md="ios-trash-outline" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Delete &nbsp; &nbsp; &nbsp;
+                                &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <ng-template #outOfCards>
+                <div class="emptyWishlist"></div>
+            </ng-template>
+        </div>
+        <div *ngSwitchCase="'wardrobe'" class="wishlist">
+            <ion-row>
+                <ion-col col-12>
+                    <p class="locale" Products in wardrobe> Wardrobe <span class="counter">({{availableClothes.length}}
+                        )</span></p>
+                </ion-col>
+                <span></span>
+            </ion-row>
+            <ion-list *ngIf="availableClothes.length >0">
+                <ion-item-sliding *ngFor="let aCloth of availableClothes">
+                    <ion-item-options side="left">
+                        <button ion-button (click)="editItem(aCloth.id)" class="editBtn">
+                            <ion-icon name="custom-edit" class="editBtnIcon"></ion-icon>
+                            <p class="editBtnLabel"> &nbsp; &nbsp; &nbsp; &nbsp; Edit &nbsp; &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                    <ion-item>
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer"
+                                              (click)="openProductPage(aCloth.id, 'adminhome')">
+                                <ion-grid class="cardGrid">
+                                    <ion-row>
+                                        <ion-col col-4 class="cardImg" [style.background-image]="aCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{aCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">{{aCloth.price}} kr</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">{{aCloth.desc}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button (click)="deleteItem(aCloth.id)" class="rejectBtn">
+                            <ion-icon ios="ios-trash-outline" md="ios-trash-outline" class="deleteBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; Remove &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+        <div *ngSwitchCase="'trades'" class="trades">
+            <ion-row>
+                <ion-col col-12>
+                    <p class="locale" Products in cart> Cart <span
+                            class="counter">({{cartItemsCount + offerDeniedClothesBuyer.length}})</span></p>
+                </ion-col>
+            </ion-row>
+            <ion-grid class="cartCardContainer" *ngFor="let cart of cartItems">
+                <ion-row>
+                    <ion-col col-12 class="cardCardCol">
+                        <ion-list class="cartCardList">
+                            <ion-item-sliding class="cartCardSliding" *ngFor="let c of cart.value">
+                                <!--                              <ion-item-options side="left" (ionSwipe)="makeOffer(c)" class="leftSwipe">-->
+                                <!--                                  <button ion-button (click)="makeOffer(c)" class="confirmBtn" color="secondary">-->
+                                <!--                                      <ion-icon ios="ios-basket-outline" md="ios-basket-outline" class="confirmBtnIcon"></ion-icon>-->
+                                <!--                                      <p class="confirmBtnLabel"> &nbsp; &nbsp; Make offer &nbsp; &nbsp;</p>-->
+                                <!--                                  </button>-->
+                                <!--                              </ion-item-options>-->
+                                <ion-item *ngIf="c.title">
+                                    <ion-card class="cartCard">
+                                        <ion-card-content class="cardContentContainer">
+                                            <ion-grid class="cardGrid">
+                                                <ion-row class="cardRow">
+                                                    <ion-col col-4 class="cardImg"
+                                                             (click)="openProductPage(c.id, 'cart')" *ngIf="c.imgUrl"
+                                                             [style.background-image]="c.imgUrl">
+                                                    </ion-col>
+                                                    <ion-col col-8 class="cardContent cartCardContent">
+                                                        <ion-row>
+                                                            <ion-col col-12 class="cardTitleContainer">
+                                                                <p class="cardTitle">{{c.title}}</p>
+                                                            </ion-col>
+                                                        </ion-row>
+                                                        <ion-row>
+                                                            <ion-col col-1>
+                                                                <ion-icon ios="ios-pin-outline" md="ios-pin-outline"
+                                                                          class="cardLocationIcon">
+                                                                </ion-icon>
+                                                            </ion-col>
+                                                            <ion-col col-11 class="cartCardLocationCol">
+                                                                <p class="cardLocation"
+                                                                   *ngIf="c.seller && c.seller.name">{{c.seller.name}}
+                                                                    , {{c.seller.city}}</p>
+                                                            </ion-col>
+                                                        </ion-row>
+                                                        <ion-row>
+                                                            <ion-col col-12 class="cardPriceContainer">
+                                                                <p class="cardPrice cartCardPrice">Price:
+                                                                    kr. {{c.price}} </p>
+                                                            </ion-col>
+                                                        </ion-row>
+                                                        <ion-row>
+                                                            <ion-col col-12 class="cardPriceContainer">
+                                                                <button class="makeOfferButton"
+                                                                        (click)="makeOfferAlert(c, 'cart', cart.key)">
+                                                                    show Interest
+                                                                </button>
+                                                            </ion-col>
+                                                        </ion-row>
+                                                    </ion-col>
+                                                </ion-row>
+                                            </ion-grid>
+                                        </ion-card-content>
+                                    </ion-card>
+                                </ion-item>
+                                <ion-item-options side="right" class="rightSwipe">
+                                    <button ion-button class="rejectBtn" (click)="removeFromCart(cart.key, c.id)"
+                                            color="danger">
+                                        <p class="rejectBtnLabel">&nbsp; Remove &nbsp;</p>
+                                    </button>
+                                </ion-item-options>
+                            </ion-item-sliding>
+                        </ion-list>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+            <ion-list>
+                <ion-item-sliding *ngFor="let resCloth of offerDeniedClothesBuyer">
+                    <!--                    <ion-item-options side="left">-->
+                    <!--                        <button ion-button (click)="makeOffer(resCloth.id)" color="success" class="confirmBtn">-->
+                    <!--                            <ion-icon name="checkmark" class="confirmBtnIcon"></ion-icon>-->
+                    <!--                            <p class="confirmBtnLabel"> &nbsp; &nbsp; &nbsp; Make offer &nbsp; &nbsp; &nbsp;</p>-->
+                    <!--                        </button>-->
+                    <!--                    </ion-item-options>-->
+                    <ion-item>
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardRow">
+                                        <ion-col (click)="openProductPage(resCloth.id, 'adminhome')" col-4
+                                                 class="cardImg" [style.background-image]="resCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{resCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice"
+                                                       *ngIf="resCloth.uploader && resCloth.uploader.name">{{resCloth.uploader.name}}
+                                                        , {{resCloth.uploader.phone}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">Original price: {{resCloth.price}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Seller has denied your offer of
+                                                        kr. {{resCloth.buyer.offer}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer" style="margin-bottom: 10%;">
+                                                    <button class="makeOfferButton"
+                                                            (click)="makeOfferAlert(resCloth, 'offerDeniedClothesBuyer')">
+                                                        Make new offer
+                                                    </button>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button (click)="rejectRequest(resCloth, 'offerDeniedClothesBuyer')"
+                                class="rejectBtn">
+                            <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Remove &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <ion-row>
+                <ion-col col-12>
+                    <p class="locale">Requests <span
+                            class="counter">({{offerClothesSeller.length + offerAcceptedClothesBuyer.length}})</span>
+                    </p>
+                </ion-col>
+            </ion-row>
+            <ion-list>
+                <ion-item-sliding *ngFor="let resCloth of offerClothesSeller">
+                    <ion-item-options side="left">
+                        <button ion-button (click)="confirmRequest(resCloth)" color="success" class="confirmBtn">
+                            <ion-icon name="checkmark" class="confirmBtnIcon"></ion-icon>
+                            <p class="confirmBtnLabel"> &nbsp; &nbsp; &nbsp; Accept request &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                    <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardRow">
+                                        <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{resCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice"><span
+                                                            style="font-weight: bold">{{resCloth.buyer.buyerName}}</span>,
+                                                        tlf. {{resCloth.buyer.buyerPhone}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription"> has requested a trade <br>
+                                                        offering kr. {{resCloth.buyer.offer}}<br>
+                                                        original price kr. {{resCloth.price}}
+                                                    </p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Swipe right to accept</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+
+                    <ion-item-options side="right">
+                        <button ion-button (click)="rejectRequest(resCloth, 'offerClothesSeller')" class="rejectBtn">
+                            <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Reject request &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+                <ion-item-sliding *ngFor="let resCloth of offerAcceptedClothesBuyer">
+                    <ion-item-options side="left">
+                        <button ion-button
+                                (click)="payItem(resCloth.id, resCloth.uploader.uid, resCloth.buyer.offer, resCloth.title)"
+                                color="success" class="confirmBtn">
+                            <ion-icon name="checkmark" class="confirmBtnIcon"></ion-icon>
+                            <p class="confirmBtnLabel"> &nbsp; &nbsp; &nbsp; Confirm trade &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                    <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardRow">
+                                        <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{resCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice"
+                                                       *ngIf="resCloth.uploader && resCloth.uploader.name">{{resCloth.uploader.name}}
+                                                        , {{resCloth.uploader.phone}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">Price: {{resCloth.buyer.offer}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Seller has accepted your trade
+                                                        request</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Swipe right to confirm</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button (click)="rejectRequest(resCloth, 'offerAcceptedClothesBuyer')"
+                                class="rejectBtn">
+                            <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Cancel trade &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <ion-row>
+                <ion-col col-12>
+                    <p class="locale">Waiting <span
+                            class="counter">({{offerClothesBuyer.length + offerAcceptedClothesSeller.length}})</span>
+                    </p>
+                </ion-col>
+            </ion-row>
+            <ion-list>
+                <ion-item-sliding *ngFor="let resCloth of offerClothesBuyer">
+                    <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardRow">
+                                        <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{resCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">Offer: {{resCloth.buyer.offer}} kr</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Waiting for seller to react to your
+                                                        interest</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button (click)="rejectRequest(resCloth, 'offerClothesBuyer', resCloth)"
+                                class="rejectBtn">
+                            <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Cancel offer &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <ion-list>
+                <ion-item-sliding *ngFor="let resCloth of offerAcceptedClothesSeller">
+                    <ion-item (click)="openProductPage(resCloth.id, 'adminhome')">
+                        <ion-card>
+                            <ion-card-content class="cardContentContainer">
+                                <ion-grid class="cardGrid">
+                                    <ion-row class="cardRow">
+                                        <ion-col col-4 class="cardImg" [style.background-image]="resCloth.cardImg">
+                                        </ion-col>
+                                        <ion-col col-8 class="cardContent">
+                                            <ion-row>
+                                                <ion-col col-12 class="cardTitleContainer">
+                                                    <p class="cardTitle">{{resCloth.title}}</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12 class="cardPriceContainer">
+                                                    <p class="cardPrice">Price: {{resCloth.buyer.offer}} kr</p>
+                                                </ion-col>
+                                            </ion-row>
+                                            <ion-row>
+                                                <ion-col col-12>
+                                                    <p class="cardDescription">Waiting for buyer to pay for the item</p>
+                                                </ion-col>
+                                            </ion-row>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-card-content>
+                        </ion-card>
+                    </ion-item>
+                    <ion-item-options side="right">
+                        <button ion-button (click)="rejectRequest(resCloth, 'offerAcceptedClothesSeller')"
+                                class="rejectBtn">
+                            <ion-icon name="close" class="rejectBtnIcon"></ion-icon>
+                            <p class="rejectBtnLabel">&nbsp; &nbsp; &nbsp; Cancel offer &nbsp; &nbsp; &nbsp;</p>
+                        </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>

@@ -1,0 +1,130 @@
+// http://ionicframework.com/docs/theming/
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face {
+  font-family: 'Barlow-Bold';
+  src: url('/assets/fonts/Barlow-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Barlow-Light';
+  src: url('/assets/fonts/Barlow-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Barlow-Medium';
+  src: url('/assets/fonts/Barlow-Medium.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Barlow-SemiBold';
+  src: url('/assets/fonts/Barlow-SemiBold.ttf') format('truetype');
+}
+
+.menu-inner {
+  width: 70vw;
+}
+
+.menuClose {
+  color: black;
+}
+.my-custom-class .alert-wrapper {
+  background: #e5e5e5;
+
+}
+
+.menuTitle {
+  padding: 0 !important;
+}
+
+.menuToolbar .toolbar-background {
+  background-color: white;
+}
+
+.menuToolbar .toolbar-background-ios {
+  background-color: white;
+}
+
+.menuListItem {
+  margin-bottom: 20px;
+  font-family: Barlow-SemiBold;
+
+}
+
+.menuSignoutIcon {
+  transform: rotate(180deg);
+  font-weight: bold;
+  margin-right: 7px;
+}
+
+.menuSignout {
+  font-size: 14px;
+  color: black;
+  font-weight: 550;
+}
+
+.menuAvatarImg {
+  border-radius: 50%;
+  height: 15vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menuWelcomeSign {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 7vh;
+  font-family: Barlow-Medium;
+}
+
+@media only screen and (min-height: 700px) {
+  .menuListItem {
+    font-size: 16px;
+  }
+
+  .menuSignout {
+    font-size: 16px;
+  }
+
+  ion-menu .scroll-content {
+    padding-left: 20px !important;
+  }
+
+  .menuWelcomeSign {
+    font-size: 14px;
+  }
+}
+
+.alert-md .alert-sub-title {
+  line-height: 25px;
+}
+
+.alert-ios .alert-sub-title {
+  line-height: 25px;
+}
+
+.alert-md .alert-button {
+  color: black;
+}
+
+.alert-ios .alert-button {
+  color: black;
+}
+
+.alert-ios .alert-button:nth-child(2) {
+  font-weight: 400;
+}
+
+.alert-md .alert-button:nth-child(2) {
+  font-weight: 400;
+}

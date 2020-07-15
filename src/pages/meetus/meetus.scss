@@ -1,0 +1,52 @@
+page-meetus {
+  ion-header {
+    background-image: url(../assets/imgs/signupcover.png);
+    background-repeat: no-repeat;
+    min-height: 23vh;
+    background-size: cover;
+    border-radius: 0px 0px 40px 0px;
+  }
+
+  .companyName {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+  }
+
+  .boldDetail {
+    font-weight: bold;
+  }
+
+  ion-item {
+    padding-right: 10px;
+  }
+
+  .headerLogoCol {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 25px;
+  }
+
+  .headerButtonCol {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .toolbar-background {
+    background: transparent;
+  }
+
+  .backLabel {
+    color: black;
+    padding: 7px;
+  }
+
+  .header-ios .toolbar-background-ios {
+    border-color: transparent;
+  }
+  pre {
+    font-size: medium;
+    font-family: Verdana;
+    white-space: pre-line;
+  }
+}

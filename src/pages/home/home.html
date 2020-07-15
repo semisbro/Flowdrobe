@@ -1,0 +1,97 @@
+<ion-header no-border translucent class="header header-ios header-translucent header-translucent-ios hydrated">
+  <ion-toolbar class="hydrated">
+    <ion-grid>
+      <ion-row class="headerButtonHolder">
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button menuToggle clear class="menuController">
+            <ion-icon ios="ios-menu-outline" md="ios-menu-outline"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-8 class="headerCenterCol">
+          <p class="appTitle"><span class="bold">FLOW</span>ROBE</p>
+        </ion-col>
+        <ion-col col-2 class="headerButtonCol">
+          <button ion-button (click)="openMarketplacePage()" clear class="marketController">
+            <ion-icon name="custom-market" class="marketIcon"></ion-icon>
+            <ion-badge [ngClass]="{
+                animated: animationController,
+                swing: animationController
+              }" id="notifications-badge" color="danger" item-end *ngIf="badgeNumber > 0">{{ badgeNumber }}</ion-badge>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding fullscreen class="hydrated">
+  <div class="cardContainer" *ngIf="ready && wardrobe; else outOfCards">
+    <sc-card *ngFor="let cloth of wardrobe; first as isFirst" [orientation]="cardDirection" [tinder-card]="cardOverlay"
+      [callDestroy]="cloth.destroyEvent" [callLike]="cloth.likeEvent" (onLike)="onCardInteract($event, 'swipe')"
+      class="swipeionic Card" (click)="openProductPage(cloth.id, 'home')">
+      <div class="cardCover"></div>
+
+      <div class="productImg" [style.background-image]="cloth.cardImg"></div>
+      <div class="descriptionContainer">
+        <ion-col col-5 class="cardSubtitle"> {{ cloth.price }} kr. </ion-col>
+
+        <ion-row class="cardTitle">
+          <ion-col col-12>
+            {{ cloth.title }}
+          </ion-col>
+        </ion-row>
+
+        <ion-row>
+          <ion-col col-5 class="cardLabel">{{ cloth.uploaderName }}</ion-col>
+          <ion-col col-7 text-right class="wishlistCol">
+            <div class="wishlist-info" *ngIf="cloth && isNewItem(cloth)">
+              Just published!
+            </div>
+            <div class="wishlist-info" *ngIf="
+                cloth &&
+                !isNewItem(cloth) &&
+                cloth.wishlists &&
+                cloth.wishlists > 0
+              ">
+              <ion-icon class="wishlistIcon" name="custom-fire"></ion-icon>
+              in {{ cloth.wishlists }} wishlist<span *ngIf="cloth.wishlists > 1">s</span>
+            </div>
+          </ion-col>
+        </ion-row>
+        <div [class.redirectBtn]="isFirst"></div>
+      </div>
+    </sc-card>
+  </div>
+  <ng-template #outOfCards>
+    <div class="noCards"></div>
+  </ng-template>
+</ion-content>
+
+<ion-footer no-border>
+  <ion-grid>
+    <ion-row class="footerButtonHolder">
+      <ion-col col-2 class="footerButtonCol">
+        <button ion-button class="homeController" (click)="retriveLastStoredCard()" clear>
+          <ion-icon name="return-left"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3 class="footerButtonCol">
+        <button ion-button class="motionController nopeBtn" (click)="onCardInteract($event, 'nope')"
+          [disabled]="!isEnabled" clear>
+          <ion-icon name="close" class="closeIcon"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-3 class="footerButtonCol">
+        <button ion-button class="motionController likeBtn" (click)="onCardInteract($event, 'like')"
+          [disabled]="!isEnabled" clear>
+          <ion-icon name="checkmark" class="checkMarkIcon"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col col-2 class="footerButtonCol">
+        <button ion-button class="homeController" (click)="openFilterPage()" clear>
+          <ion-icon name="options" class="optionsIcon"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

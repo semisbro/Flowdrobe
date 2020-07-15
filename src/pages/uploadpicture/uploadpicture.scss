@@ -1,0 +1,289 @@
+page-uploadpicture {
+  /* ion-header */
+
+  .headerButtonHolder {
+    justify-content: center;
+  }
+
+  .headerButtonCol {
+    text-align: center;
+    align-self: center;
+  }
+
+  .appTitle {
+    padding: 0;
+    font-size: 20px;
+    margin-top: 17px;
+  }
+
+  ion-header {
+    padding: 0;
+  }
+
+  ion-toolbar {
+    max-height: 70px;
+  }
+
+  .toolbar-background {
+    background-color: white;
+  }
+
+  ion-navbar .back-button-ios {
+    border: none;
+    height: 40px;
+    width: 40px;
+    color: black;
+  }
+
+  @media only screen and (max-height: 600px) {
+    ion-navbar .back-button-ios {
+      border: none;
+      height: 40px;
+      width: 40px;
+      color: black;
+      padding-top: 5px;
+    }
+  }
+
+  .back-button-text {
+    display: none;
+  }
+
+  .back-button-text-ios {
+    display: none;
+  }
+
+  .nextController {
+    color: black;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: capitalize;
+  }
+
+  .nextLabel {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 17px;
+  }
+
+  .subtoolbarCol {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin: 0;
+  }
+
+  .subtoolbarBtn {
+    color: black;
+    font-size: 30px;
+    padding: 8px;
+    height: 65px;
+    padding-top: 14px;
+  }
+
+  .subtoolbarLabel {
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    padding-top: 4px;
+    padding-bottom: 12px;
+  }
+
+  .firstCol {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  .backController {
+    padding: 0;
+    font-size: 25px;
+    width: 100%;
+  }
+
+  .backIcon {
+    color: black;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  @media only screen and (max-height: 700px) {
+    .appTitle {
+      font-size: 18px;
+      margin-top: 18px;
+    }
+
+    .nextLabel {
+      font-size: 15px;
+      margin-top: 15px;
+    }
+  }
+  /* ion-content */
+
+  .scroll-content {
+    padding-bottom: 0 !important;
+  }
+
+  .mainPictureGrid .mainPictureRow .mainPictureContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .mainPictureGrid .mainPictureRow .mainPictureContainer .mainPicture img {
+    width: 100%;
+    height: auto;
+  }
+
+  .helperTxt {
+    margin-top: 5px;
+    margin-bottom: 0px;
+    color: rgba(0, 0, 0, 0.4);
+  }
+
+  .guideLabel {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    //margin-top: 0;
+    //top: 50%;
+    position: relative;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  img {
+    width: 200px;
+    height: 400px;
+    height: 100%;
+    width: 100%;
+  }
+
+  .imageContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    object-fit: fill;
+    object-position: center;
+  }
+
+  .currentImageHolder {
+    border: 2px solid black;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .deleteButton {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(237, 85, 105);
+    color: white;
+    border-radius: 50%;
+    font-size: 13pt;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    right: -4px;
+    top: -10px;
+    position: absolute;
+  }
+  img{
+    object-fit: fill;
+  }
+
+  .footerImageCol {
+    height: 100%;
+  }
+
+  .footerButtonCol {
+    text-align: center;
+  }
+
+  .footerButtonCol button {
+    padding: 0;
+  }
+
+  .footerButtonCol ion-icon {
+    color: black;
+  }
+
+  .footerButtonCol:nth-of-type(2n) ion-icon {
+    font-size: 250%;
+  }
+
+  .footerButtonCol:nth-of-type(2n-1) ion-icon {
+    font-size: 300%;
+  }
+
+  .mainPictureContainer {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: none;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  }
+
+  .mainPictureDiv {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  .mainPictureGrid {
+    height: 100%;
+  }
+
+  .mainPictureRow {
+    height: 100%;
+  }
+
+  .subPictureContainer {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  .subPictureContainer p {
+    margin: 0;
+    color: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    font-size: 9pt;
+    text-align: center;
+  }
+
+  /* ion-footer */
+
+  ion-footer {
+    height: 13vh;
+    margin-bottom: 5px;
+  }
+
+  ion-footer ion-grid {
+    height: 100%;
+  }
+
+  .footerElementHolder {
+    height: 100%;
+  }
+}
+
+.imgExample {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10%;
+  height: 151px;
+  width: 137px;
+  max-width: 100%;
+  max-height: 100%;
+}

@@ -1,0 +1,70 @@
+<ion-menu [content]="mycontent" type="overlay" [swipeEnabled]="false">
+  <ion-header menuClose no-border>
+    <ion-toolbar class="menuToolbar">
+      <button ion-button icon-only clear class="menuClose">
+        <ion-icon ios="ios-close-outline" md="ios-close-outline"></ion-icon>
+      </button>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content padding>
+    <ion-avatar *ngIf="loginState">
+      <!-- <img
+        src="https://www.w3schools.com/howto/img_avatar.png"
+        class="menuAvatarImg"
+      /> -->
+      <img
+        src="assets/imgs/avatar.png"
+        class="menuAvatarImg"
+      />
+    </ion-avatar>
+    <p *ngIf="loginState" class="menuWelcomeSign">Hej, {{ username }}</p>
+    <ion-list>
+      <p
+        menuClose
+        (click)="openPage('LoginPage')"
+        class="menuListItem"
+        *ngIf="!loginState"
+      >
+        Login / Signup
+      </p>
+      <p
+        menuClose
+        (click)="openPage('EditProfile')"
+        class="menuListItem"
+        *ngIf="loginState"
+      >
+        My info
+      </p>
+      <p
+        menuClose
+        (click)="openPage('AdminhistoryPage')"
+        class="menuListItem"
+        *ngIf="loginState"
+      >
+        Product history
+      </p>
+      <p menuClose (click)="openPage('TermsOfTradePage')" class="menuListItem">
+        Terms of trade
+      </p>
+      <p menuClose (click)="openPage('TutorialPage')" class="menuListItem">
+        Tutorial
+      </p>
+      <p menuClose (click)="resetSwipedCards()" class="menuListItem">
+        Reset swiped cards
+      </p>
+      <!--            <p menuClose (click)="deleteStorage()" class="menuListItem">Restart!!</p>-->
+    </ion-list>
+  </ion-content>
+  <ion-footer menuClose *ngIf="loginState" (click)="signout()">
+    <button ion-button clear class="menuSignout">
+      <ion-icon
+        ios="ios-log-out"
+        md="ios-log-out"
+        class="menuSignoutIcon"
+      ></ion-icon>
+      Sign out
+    </button>
+  </ion-footer>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

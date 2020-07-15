@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>559632585861-itb006u4fui56pc9j7k1effj76uq208h.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.559632585861-itb006u4fui56pc9j7k1effj76uq208h</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBPgV5jIp-tGullPXRaiI3YJa5eakJ7DlM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>559632585861</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>robagusta.flowrobe</string>
+	<key>PROJECT_ID</key>
+	<string>fr-test-db</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fr-test-db.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:559632585861:ios:a3b323ad8cd6a8d9c2c5ec</string>
+	<key>DATABASE_URL</key>
+	<string>https://fr-test-db.firebaseio.com</string>
+</dict>
+</plist>
